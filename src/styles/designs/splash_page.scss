@@ -1,12 +1,20 @@
 .splash-page-container {
-  background-color: whitesmoke;
-  height: 100vh;
+  // background-color: whitesmoke;
+  // background-image: linear-gradient(whitesmoke, #FFB6C1);
+  background-image: linear-gradient(whitesmoke, #FAF0F8);
+  height: auto;
+  max-width: 100vw;
+  // height: 200vh;
 
-
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
 
   footer {
-    position: absolute;
-    bottom: 0px;
+    left: 0;
+    bottom: 0;
     width: 100vw;
     height: 30px;
     padding: 15px;
@@ -31,11 +39,13 @@
   h1 {
     color: $primary-peppermint-red;
     font-size: 150px;
+    font-family: $title-font;
   }
 
   p {
     padding-left: 25px;
     font-size: 20px;
+    font-family: $secondary-font;
 
   }
 
@@ -68,8 +78,59 @@
   padding-bottom: 1px;
   }
 
+
+
+
   
 }
 
+.splash-page-body {
+  margin-top: 200px;
+
+  li:nth-child(even) {
+    flex-direction: row-reverse;
+
+  }
+  
+
+  li {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 200px;
+
+
+    img {
+      height: 520px;
+      @include standardRadius;
+    }
+
+    h1 {
+      font-family: $title-font;
+      color: $secondary-peppermint-red;
+      font-size: 70px;
+
+
+      p {
+        font-family: $secondary-font;
+        color: black;
+        margin-left: 25px;
+        font-size: 25px;
+      }
+
+    }
+
+
+
+
+  }
+
+  .butler-pocket {
+    border-radius: 200px 60px 40px 10px;
+  }
+  
+
+}
 
 

@@ -12,7 +12,8 @@ class Navbar extends React.Component {
 
 
     return (
-      <nav className='navbar-container'>Mintrello: THIS IS THE NAVBAR. WILL ADD LATER
+      <nav className='navbar-container'>
+        <h3>Mintrello</h3>
       
       
       
