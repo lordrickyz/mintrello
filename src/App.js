@@ -9,13 +9,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/" component={SplashPage} />
-      </Switch>
-      {/* Hello
-
-      <SplashPage /> */}
-    
-        {/* <Route exact path="/" component={SplashPage} /> */}
-      
+      </Switch>      
     </div>
     </Router>
   );

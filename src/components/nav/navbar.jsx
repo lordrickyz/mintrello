@@ -12,7 +12,13 @@ class Navbar extends React.Component {
 
 
     return (
-      <div>NAVBAR</div>
+      <nav className='navbar-container'>Mintrello:
+      
+      
+      
+      
+      
+      </nav>
     )
 
   }

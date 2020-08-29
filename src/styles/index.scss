@@ -1,9 +1,5 @@
-@import './styles_variables/styles.scss';
-
-
-.App {
-  
-  font-family: sans-serif;
-  text-align: center;
-  margin: 6rem 0;
-}
+@import './base/reset.scss';
+@import './base/styles.scss';
+@import './designs/splash_page.scss';
+@import './designs/navbar.scss'
+// @import reset;

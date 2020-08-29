@@ -1,0 +1,25 @@
+.splash-page-container {
+  background-color: whitesmoke;
+  // height: 100vh;
+
+
+}
+
+.start-buttons-container {
+  
+  display: flex;
+  flex-direction: row;
+
+  li button {
+    background-color: green;
+  }
+
+  
+}
+
+
+  footer {
+    height: 30px;
+    color: white;
+    background-color: #2e4d58;
+  }
