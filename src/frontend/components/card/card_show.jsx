@@ -1,7 +1,20 @@
 import React from "react";
+import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faPencilAlt, faAlignJustify} from "@fortawesome/free-solid-svg-icons";
 import "./card_show.css";
+import { closeModal } from "../../actions/modal_actions";
+
+
+const mstp = () => {
+  return {};
+};
+
+const mdtp = (dispatch) => {
+  return {
+    closeModal: () => dispatch(closeModal()),
+  };
+};
 
 class CardShow extends React.Component {
   // constructor(props) {
@@ -9,15 +22,16 @@ class CardShow extends React.Component {
 
   // }
 
-
   render() {
-
     const titleBlock = (
       <div className="card-title-container">
         <span className="card-title-icon" id="card-show-icons">
           <FontAwesomeIcon icon={faPencilAlt} />
         </span>
         <textarea className="card-title-editor" spellCheck="false" />
+        <span className="card-show-close" onClick={this.props.closeModal}>
+          <FontAwesomeIcon icon={faTimes} />
+        </span>
         <div className="card-show-listname">
           <p>In Column</p>
         </div>
@@ -42,9 +56,6 @@ class CardShow extends React.Component {
 
     return (
       <div className="card-show">
-        <span className="card-show-close">
-          <FontAwesomeIcon icon={faTimes} />
-        </span>
         <div className="card-show-title"> {titleBlock} </div>
         <div className="card-show-desc"> {descriptionBlock} </div>
       </div>
@@ -53,4 +64,4 @@ class CardShow extends React.Component {
 }
 
 
-export default CardShow;
+export default connect(mstp, mdtp)(CardShow);
