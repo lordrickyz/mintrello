@@ -1,6 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { closeModal } from "../../actions/modal_actions";
+import CardShow from "./card_show";
+
+
 
 const Modal = ({ modal, closeModal }) => {
   if (!modal) {
@@ -9,11 +12,8 @@ const Modal = ({ modal, closeModal }) => {
 
   let component;
   switch (modal.type) {
-    case "menu-board":
-      component = <BoardShowMenu />;
-      break;
     case "showCard":
-      component = <CardShowContainer cardId={modal.id} />;
+      component = <CardShow/>;
       break;
     default:
       return null;
