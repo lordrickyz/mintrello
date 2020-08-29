@@ -19,19 +19,27 @@ class SplashPage extends React.Component {
       
       <div className='splash-page-container'>
         <Navbar/>
-        <img src={butler} alt="The Butler is missing :O" />
+        <img className ='butler-gif' src={butler} alt="The Butler is missing :O" />
+
+        <div className='splash-page-main-words'>
+          <h1>Mintrello</h1>
+          <p>ADD SOMETHING INSPIRING HERE</p>
+          <ul className='start-buttons-container'>
+            <li><button>Recipe Tutorial</button></li>
+            <li><button>Get Started</button></li>
+          </ul>
 
 
-        <ul className='start-buttons-container'>
-          <li><button>Recipe Tutorial</button></li>
-          <li><button>Get Started</button></li>
 
-        </ul>
+        </div>
+
+
+     
 
 
         
         <footer>
-          Whipped up by:
+          Whipped up by: ADD NAMES HERE
         </footer>
         </div>
     )

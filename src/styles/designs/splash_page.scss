@@ -1,25 +1,75 @@
 .splash-page-container {
   background-color: whitesmoke;
-  // height: 100vh;
+  height: 100vh;
+
+
+
+  footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100vw;
+    height: 30px;
+    padding: 15px;
+
+    color: white;
+    background-color: #2e4d58;
+  }
+}
+
+.butler-gif {
+  position: relative;
+  height: 380px;
+
+}
+
+.splash-page-main-words{
+  position: absolute;
+  top: 150px;
+  right: 480px;
+  width: 500px;
+
+  h1 {
+    color: $primary-peppermint-red;
+    font-size: 150px;
+  }
+
+  p {
+    padding-left: 25px;
+    font-size: 20px;
+
+  }
 
 
 }
 
 .start-buttons-container {
-  
+
   display: flex;
   flex-direction: row;
+  background-color: orange;
+  padding: 10px 10px 10px 10px;
+  justify-content: space-around;
+  width: 50%;
+  margin-left: 28%;
+  margin-top: 2%;
+
+  
 
   li button {
-    background-color: green;
+  height: 30px;
+  width: 120px;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: 1px;
+  border-top-color: rgba(0, 0, 0, 0.1);
+  border-right-color: rgba(0, 0, 0, 0.1);
+  border-bottom-color: rgba(0, 0, 0, 0.25);
+  border-left-color: rgba(0, 0, 0, 0.1);
+  padding-bottom: 1px;
   }
 
   
 }
 
 
-  footer {
-    height: 30px;
-    color: white;
-    background-color: #2e4d58;
-  }
+
