@@ -1,0 +1,101 @@
+.card-show {
+  background-color: #a82525;
+  width: 100%;
+  max-width: calc(100vw - 20px);
+  min-width: 400px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 20px 5px 15px;
+  border-radius: 2px;
+}
+
+/* X close button */
+
+.card-show > span {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  font-size: 26px;
+  color: gray;
+  z-index: 3;
+}
+
+.card-show > span:hover {
+  color: rgb(50, 50, 50);
+  cursor: pointer;
+}
+
+#card-show-icons {
+  font-size: 25px;
+}
+
+/* title */
+
+.card-title-icon {
+  position: absolute;
+  left: -35px;
+  top: 5px;
+}
+
+.card-title-container {
+  position: relative;
+  margin-left: 35px;
+  margin-bottom: 15px;
+}
+
+.card-title-editor {
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  left: -6px;
+  width: calc(100% - 50px);
+  height: 30px;
+  font-weight: bold;
+  font-size: 26px;
+  letter-spacing: 0.03em;
+  background: transparent;
+  border: 2px solid transparent;
+  padding: 0 4px;
+}
+
+.card-show-listname {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: normal;
+  margin-top: -10px;
+}
+
+/* description */
+
+.card-description {
+  margin-bottom: 24px;
+}
+
+.card-description-top {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  position: relative;
+}
+
+.card-description-top > h3 {
+  display: inline-block;
+  margin: 0;
+  padding-left: 12px;
+  font-size: 26px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.card-description-editor {
+  margin-left: 30px;
+  width: 500px;
+  font-size: 20px;
+  background: transparent;
+  font-family: 'Roboto', sans-serif;
+  border: 2px solid transparent;
+  color: white;
+}
+
+.card-description-editor::placeholder {
+  color: #5e6c84;
+}

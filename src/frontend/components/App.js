@@ -1,7 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import '../styles/index.css';
-import CardShow from './card/card_show'
+import CardShow from './card/card_show';
 
 const App = () => {
   return (
