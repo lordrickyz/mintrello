@@ -1,9 +1,13 @@
+
+
+
 .splash-page-container {
   // background-color: whitesmoke;
   // background-image: linear-gradient(whitesmoke, #FFB6C1);
   background-image: linear-gradient(whitesmoke, #FAF0F8);
   height: auto;
-  max-width: 100vw;
+  width: auto;
+
   // height: 200vh;
 
   header {
@@ -26,14 +30,14 @@
 
 .butler-gif {
   position: relative;
-  height: 380px;
+  height: 430px;
 
 }
 
 .splash-page-main-words{
   position: absolute;
-  top: 150px;
-  right: 480px;
+  top: 180px;
+  right: 320px;
   width: 500px;
 
   h1 {
@@ -43,8 +47,9 @@
   }
 
   p {
+    color: $secondary-peppermint-red;
     padding-left: 25px;
-    font-size: 20px;
+    font-size: 25px;
     font-family: $secondary-font;
 
   }
@@ -56,12 +61,15 @@
 
   display: flex;
   flex-direction: row;
-  background-color: orange;
-  padding: 10px 10px 10px 10px;
   justify-content: space-around;
+  background-color: #43464B;
+  border: 2px solid silver;
+  padding: 20px 15px 20px 15px;
   width: 50%;
   margin-left: 28%;
   margin-top: 2%;
+  @include standardRadius;
+
 
   
 
@@ -85,14 +93,13 @@
 }
 
 .splash-page-body {
-  margin-top: 200px;
+  margin-top: 140px;
 
   li:nth-child(even) {
     flex-direction: row-reverse;
 
   }
   
-
   li {
 
     display: flex;
@@ -129,8 +136,19 @@
   .butler-pocket {
     border-radius: 200px 60px 40px 10px;
   }
+
+
   
 
 }
+
+// .second-test-footer {
+//   color: white;
+//   height: 200px;
+//   width: 400px;
+//   background-image: linear-gradient(#9C8898, white);
+//   @include standardRadius;
+
+// }
 
 

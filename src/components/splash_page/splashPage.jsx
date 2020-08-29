@@ -24,7 +24,7 @@ class SplashPage extends React.Component {
 
         <div className='splash-page-main-words'>
           <h1>Mintrello</h1>
-          <p>ADD SOMETHING INSPIRING HERE</p>
+          <p>The sweet Kanban board for creating, tracking, and finishing tasks</p>
           <ul className='start-buttons-container'>
             <li><button>Recipe Tutorial</button></li>
             <li><button>Get Started</button></li>
@@ -51,13 +51,23 @@ class SplashPage extends React.Component {
           <li>
           <h1>Take anywhere
             <br />
-              <p>dsfbkjlsghjshgjghjkdg</p>
+              <p>With Mintrello you can </p>
           </h1>
           <img className='butler-pocket' src={butlerPocket} alt="I'm missing :O" />
 
 
           </li>
         </ul>
+        {/* <div className='second-test-footer'>
+          Whipped up by
+
+
+
+        </div> */}
+
+
+
+
         <footer>
           Whipped up by: ADD NAMES HERE
         </footer>
