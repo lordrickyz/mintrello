@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { openModal } from "../../actions/modal_actions";
+import "./card_index.css"
 
 
 const mstp = () => {
@@ -11,16 +12,26 @@ const mstp = () => {
 
 const mdtp = (dispatch) => {
   return {
-    openCard: () => dispatch(openModal("showCard")),
+    openModal: (modal) => dispatch(openModal(modal)),
   };
 };
 
 
 class Card extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.showCardContainer = this.showCardContainer.bind(this)
+  }
+
+  showCardContainer() {
+    this.props.openModal("show-card");
+  }
+
   render() {
     return (
       <>
-      <button onClick={this.props.openCard}/>
+        <button onClick={this.showCardContainer} />
       </>
     );
   }
