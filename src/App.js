@@ -1,25 +1,23 @@
 import React from "react";
-import { Switch, Route, Router } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SplashPage from "../src/components/splash_page/splashPage"
-import './styles/index.scss';
+import "./styles/index.scss";
 
 function App() {
   return (
-
-    // <Switch>
-    //   <Route exact path="/" component={SplashPage} />
-    // </Switch>
-
+    <Router>
     <div className="App">
-      Hello
+      <Switch>
+        <Route exact path="/" component={SplashPage} />
+      </Switch>
+      {/* Hello
 
-      <SplashPage />
+      <SplashPage /> */}
     
         {/* <Route exact path="/" component={SplashPage} /> */}
-     
-
       
     </div>
+    </Router>
   );
 }
 
