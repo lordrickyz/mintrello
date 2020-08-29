@@ -1,11 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './styles/index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import Root from "./components/root";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+document.addEventListener("DOMContentLoaded", () => {
+  const root = document.getElementById("root");
+  ReactDOM.render(<Root/>, root);
+});
