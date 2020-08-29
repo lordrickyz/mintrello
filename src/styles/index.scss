@@ -1,0 +1,9 @@
+@import './styles_variables/styles.scss';
+
+
+.App {
+  background-color: $brand-primary;
+  font-family: sans-serif;
+  text-align: center;
+  margin: 6rem 0;
+}
