@@ -1,4 +1,13 @@
 // where everything exists
+// .dashboard-container {
+//   display: flex;
+// }
+
 .dashboard-container {
-  display: flex;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    box-sizing: border-box;
+    height: calc(100vh);
+    
 }

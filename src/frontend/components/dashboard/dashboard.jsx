@@ -27,6 +27,7 @@ class DashBoard extends React.Component {
   }
   // JSON.parse(localStorage.getItem('state'))
 
+  // Adding Columns
   addColumn = (column) => {
     const newState = {
       ...this.state,
@@ -38,8 +39,43 @@ class DashBoard extends React.Component {
     };
     this.setState(newState);
     localStorage.setItem("state", JSON.stringify(newState));
+  };
+
+  // Adding Cards
+  addCard = (column, card) => {
+    const newState = {
+      ...this.state,
+      cards: {
+        ...this.state.cards,
+        [card.id]: card,
+      },
+      columns: {
+        ...this.state.columns,
+        [column.id]: {
+          ...column,
+          cardIds: this.state.columns[column.id].cardIds.concat(card.id),
+        },
+      },
+    };
+
+    this.setState(newState);
+    localStorage.setItem("state", JSON.stringify(newState));
+  };
+
+  editCard = (card) => {
+    const newState = {
+      ...this.state,
+      cards: {
+        ...this.state.cards,
+        [card.id]: card,
+      },
+    }
+
+    this.setState(newState);
+    localStorage.setItem("state", JSON.stringify(newState));
   }
 
+  // Drag and Drop Function
   onDragEnd = (result) => {
     const { destination, source, draggableId, type } = result;
 
@@ -122,47 +158,49 @@ class DashBoard extends React.Component {
     localStorage.setItem("state", JSON.stringify(newState));
   };
 
+
   render() {
-    // debugger;
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
-        <Droppable
-          droppableId="all-columns"
-          direction="horizontal"
-          type="column"
-        >
-          {(provided) => (
-            <div
-              className="dashboard-container"
-              {...provided.droppableProps}
-              ref={provided.innerRef}
-            >
-              {this.state.columnOrder.map((columnId, index) => {
-                const column = this.state.columns[columnId];
-                const cards = column.cardIds.map(
-                  (cardId) => this.state.cards[cardId]
-                );
+          <Droppable
+            droppableId="all-columns"
+            direction="horizontal"
+            type="column"
+          >
+            {(provided) => (
+              <div
+                className="dashboard-container"
+                {...provided.droppableProps}
+                ref={provided.innerRef}
+              >
+                {this.state.columnOrder.map((columnId, index) => {
+                  const column = this.state.columns[columnId];
+                  const cards = column.cardIds.map(
+                    (cardId) => this.state.cards[cardId]
+                  );
 
-                return (
-                  <Column
-                    key={column.id}
-                    column={column}
-                    cards={cards}
-                    index={index}
-                  />
-                );
-              })}
-              {provided.placeholder}
+                  return (
+                    <Column
+                      addCard={this.addCard}
+                      key={column.id}
+                      column={column}
+                      cards={cards}
+                      totalCards={this.state.cards}
+                      index={index}
+                    />
+                  );
+                })}
+                {provided.placeholder}
 
-              <ColumnForm
-                onSubmit={this.addColumn}
-                columns={this.state.columns}
-                columnLength={this.state.columnOrder.length + 1}
-                columnOrder={this.state.columnOrder}
-              />
-            </div>
-          )}
-        </Droppable>
+                <ColumnForm
+                  onSubmit={this.addColumn}
+                  columns={this.state.columns}
+                  columnLength={this.state.columnOrder.length + 1}
+                  columnOrder={this.state.columnOrder}
+                />
+              </div>
+            )}
+          </Droppable>
       </DragDropContext>
     );
   }
