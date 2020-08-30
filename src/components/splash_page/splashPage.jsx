@@ -16,25 +16,28 @@ class SplashPage extends React.Component {
 
   render() {
 
+    const dummyText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus non enim praesent elementum. Nibh tortor id aliquet lectus proin. Dictum non consectetur a erat nam at lectus urna duis. Augue interdum velit euismod in pellentesque massa placerat duis. Viverra mauris in aliquam sem fringilla ut morbi tincidunt. Consectetur purus ut faucibus pulvinar elementum integer enim neque. In mollis nunc sed id.'
+
 
     return (
       <div className='splash-page-container'>
         <header><Navbar/></header>
-        <img className ='butler-gif' src={butler} alt="The Butler is missing :O" />
-
-        <div className='splash-page-main-words'>
-          <h1>Mintrello</h1>
-          <p>The sweet Kanban board for creating, tracking, and finishing tasks</p>
-          <ul className='start-buttons-container'>
-            <li><button>Recipe Tutorial</button></li>
-            <li><button>Get Started</button></li>
-          </ul>
-        </div>
+        <div className='splash-page-top'>
+          <img className ='butler-gif' src={butler} alt="The Butler is missing :O" />
+          <div className='splash-page-main-words'>
+            <h1>Mintrello</h1>
+            <p>The sweet Kanban board for creating, tracking, and finishing tasks</p>
+            <ul className='start-buttons-container'>
+              <li><button>Recipe Tutorial</button></li>
+              <li><button>Get Started</button></li>
+            </ul>
+          </div>
+        s</div>
         <ul className='splash-page-body'>
           <li>
             <h1>Track
               <br />
-              <p>dsfbkjlsghjshgjghjkdg</p>
+              <p>{dummyText}</p>
             </h1>
             
             <img src={splashImageOne} alt="I'm missing :O" />
@@ -42,7 +45,7 @@ class SplashPage extends React.Component {
           <li>
           <h1>Complete
             <br />
-              <p>dsfbkjlsghjshgjghjkdg</p>
+              <p>{dummyText}</p>
           </h1>
           <img src={splashImageTwo} alt="I'm missing :O" />
 
