@@ -1,12 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../nav/navbar';
-import butler from '../../images/Mintrello-Butler.gif';
-import splashImageOne from '../../images/splashfiller1.png';
-import splashImageTwo from '../../images/splashfiller2.png';
-import butlerPocket from '../../images/buter-pocket.jpg';
-
-
+import butler from "../../../images/Mintrello-Butler.gif";
+import splashImageOne from '../../../images/splashfiller1.png';
+import splashImageTwo from '../../../images/splashfiller2.png';
+import butlerPocket from '../../../images/buter-pocket.jpg';
 
 
 class SplashPage extends React.Component {
