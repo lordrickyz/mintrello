@@ -1,0 +1,25 @@
+
+
+.navbar-container {
+  // background-color: $peppermint-red;
+  position: sticky;
+  background-image: linear-gradient(to bottom right, $primary-peppermint-red, $secondary-peppermint-red);
+  height: 40px;
+  padding: 18px 30px 18px 15px;
+  box-shadow: $light-box-shadow;
+
+
+  h3 {
+    position: absolute;
+    text-align: center;
+    font-family: $title-font;
+    color: whitesmoke;
+    font-size: 40px;
+    letter-spacing: 1px;
+  
+    
+
+  }
+
+
+}

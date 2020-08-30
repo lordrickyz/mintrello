@@ -1,0 +1,154 @@
+
+
+
+.splash-page-container {
+  // background-color: whitesmoke;
+  // background-image: linear-gradient(whitesmoke, #FFB6C1);
+  background-image: linear-gradient(whitesmoke, #FAF0F8);
+  height: auto;
+  width: auto;
+
+  // height: 200vh;
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  footer {
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 30px;
+    padding: 15px;
+
+    color: white;
+    background-color: #2e4d58;
+  }
+}
+
+.butler-gif {
+  position: relative;
+  height: 430px;
+
+}
+
+.splash-page-main-words{
+  position: absolute;
+  top: 180px;
+  right: 320px;
+  width: 500px;
+
+  h1 {
+    color: $primary-peppermint-red;
+    font-size: 150px;
+    font-family: $title-font;
+  }
+
+  p {
+    color: $secondary-peppermint-red;
+    padding-left: 25px;
+    font-size: 25px;
+    font-family: $secondary-font;
+
+  }
+
+
+}
+
+.start-buttons-container {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #43464B;
+  border: 2px solid silver;
+  padding: 20px 15px 20px 15px;
+  width: 50%;
+  margin-left: 28%;
+  margin-top: 2%;
+  @include standardRadius;
+
+
+  
+
+  li button {
+  height: 30px;
+  width: 120px;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: 1px;
+  border-top-color: rgba(0, 0, 0, 0.1);
+  border-right-color: rgba(0, 0, 0, 0.1);
+  border-bottom-color: rgba(0, 0, 0, 0.25);
+  border-left-color: rgba(0, 0, 0, 0.1);
+  padding-bottom: 1px;
+  }
+
+
+
+
+  
+}
+
+.splash-page-body {
+  margin-top: 140px;
+
+  li:nth-child(even) {
+    flex-direction: row-reverse;
+
+  }
+  
+  li {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 200px;
+
+
+    img {
+      height: 520px;
+      @include standardRadius;
+    }
+
+    h1 {
+      font-family: $title-font;
+      color: $secondary-peppermint-red;
+      font-size: 70px;
+
+
+      p {
+        font-family: $secondary-font;
+        color: black;
+        margin-left: 25px;
+        font-size: 25px;
+      }
+
+    }
+
+
+
+
+  }
+
+  .butler-pocket {
+    border-radius: 200px 60px 40px 10px;
+  }
+
+
+  
+
+}
+
+// .second-test-footer {
+//   color: white;
+//   height: 200px;
+//   width: 400px;
+//   background-image: linear-gradient(#9C8898, white);
+//   @include standardRadius;
+
+// }
+
+
