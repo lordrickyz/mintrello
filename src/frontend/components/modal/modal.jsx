@@ -1,19 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
 import { closeModal } from "../../actions/modal_actions";
+import CardShow from "../card/card_show";
+import "./modal.css"
 
 const Modal = ({ modal, closeModal }) => {
   if (!modal) {
     return null;
   }
-
   let component;
   switch (modal.type) {
-    case "menu-board":
-      component = <BoardShowMenu />;
-      break;
-    case "showCard":
-      component = <CardShowContainer cardId={modal.id} />;
+    case "show-card":
+      component = <CardShow card={modal.item} />;
       break;
     default:
       return null;

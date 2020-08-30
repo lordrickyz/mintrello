@@ -12,16 +12,16 @@
 
 /* X close button */
 
-.card-show > span {
+.card-show-close {
   position: absolute;
-  right: 30px;
-  top: 20px;
+  right: 0px;
+  top: 0px;
   font-size: 26px;
-  color: gray;
+  color: rgb(255, 255, 255);
   z-index: 3;
 }
 
-.card-show > span:hover {
+.card-show-close:hover {
   color: rgb(50, 50, 50);
   cursor: pointer;
 }
@@ -62,7 +62,7 @@
   color: #ffffff;
   font-size: 18px;
   font-weight: normal;
-  margin-top: -10px;
+  margin-top: 0px;
 }
 
 /* description */
