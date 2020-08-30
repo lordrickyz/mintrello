@@ -41,6 +41,11 @@ class DashBoard extends React.Component {
     localStorage.setItem("state", JSON.stringify(newState));
   };
 
+  removeColumn = (column) => {
+    delete this.state.columns[column.id];
+    return;
+  }
+
   // Adding Cards
   addCard = (column, card) => {
     const newState = {
@@ -73,6 +78,10 @@ class DashBoard extends React.Component {
 
     this.setState(newState);
     localStorage.setItem("state", JSON.stringify(newState));
+  }
+
+  removeCard = (column, card) => {
+
   }
 
   // Drag and Drop Function
@@ -187,6 +196,7 @@ class DashBoard extends React.Component {
                       cards={cards}
                       totalCards={this.state.cards}
                       index={index}
+                      removeCard={this.removeCard}
                     />
                   );
                 })}

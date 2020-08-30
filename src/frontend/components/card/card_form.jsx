@@ -46,7 +46,7 @@ class CardForm extends React.Component {
 
           <input
             type="submit"
-            value="Add Card"
+            value="+Add Card"
             disabled={!this.state.title}
             className="card-input-submit"
           />

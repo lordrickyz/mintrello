@@ -44,7 +44,7 @@ class ColumnForm extends React.Component {
 
           <input
             type="submit"
-            value="Add List"
+            value="+Add List"
             disabled={!this.state.title}
             className="list-input-submit"
           />
