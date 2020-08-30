@@ -23,6 +23,11 @@
   display: flex;
   box-sizing: border-box;
   height: fit-content;
+  overflow-y: auto;
+}
+
+.column-card-container::-webkit-scrollbar {
+    display: none;
 }
 
 .list-form-container {
