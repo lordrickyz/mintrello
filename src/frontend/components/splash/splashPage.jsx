@@ -23,7 +23,7 @@ class SplashPage extends React.Component {
           <img className ='butler-gif' src={butler} alt="The Butler is missing :O" />
           <div className='splash-page-main-words'>
             <h1>Mintrello</h1>
-            <p>The sweet Kanban board for creating, tracking, and finishing tasks</p>
+            <p>Keep project planning sweet and simple</p>
             <ul className='start-buttons-container'>
               <li><button>Recipe Tutorial</button></li>
               <li><button>Get Started</button></li>
