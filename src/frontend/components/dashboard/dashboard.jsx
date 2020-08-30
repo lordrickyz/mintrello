@@ -2,11 +2,29 @@ import React from "react";
 import Column from "../column/column"
 import initialData from "../../database/initial_data";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 // import { withRouter } from "react-router";
 
+const mstp = () => {
+  let data;
+  if (localStorage.getItem("state") != null) {
+    data = JSON.parse(localStorage.getItem("state"));
+  } else {
+    data = initialData;
+  }
+
+  return {
+    data: data,
+  }
+};
+
 class DashBoard extends React.Component {
-  state = initialData;
+  constructor(props) {
+    super(props);
+    this.state = this.props.data;
+    localStorage.setItem('state', JSON.stringify(this.state));
+  }
+  // JSON.parse(localStorage.getItem('state'))
 
   onDragEnd = result => {
     const { destination, source, draggableId, type } = result;
@@ -32,6 +50,7 @@ class DashBoard extends React.Component {
         columnOrder: newColumnOrder,
       };
       this.setState(newState);
+      localStorage.setItem("state", JSON.stringify(newState));
       return;
     }
 
@@ -58,6 +77,7 @@ class DashBoard extends React.Component {
       };
 
       this.setState(newState);
+      localStorage.setItem("state", JSON.stringify(newState));
       return;
     }
 
@@ -86,9 +106,11 @@ class DashBoard extends React.Component {
     };
 
     this.setState(newState);
+    localStorage.setItem("state", JSON.stringify(newState));
   };
 
   render() {
+    // debugger;
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
         <Droppable
@@ -122,4 +144,4 @@ class DashBoard extends React.Component {
 
 }
 
-export default (DashBoard);
+export default connect(mstp)(DashBoard);
