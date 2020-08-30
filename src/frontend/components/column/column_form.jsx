@@ -2,14 +2,14 @@ import React from "react";
 
 class ColumnForm extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      id: "",
+      id: `column-${this.props.columnLength}`,
       title: "",
       cardIds: [],
     };
 
-    this.update = this.update.bind(this);
+    this.update = this.update.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -21,26 +21,28 @@ class ColumnForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger;
-    let column;
-    this.setState({ id: `column-${this.props.nextId}`});
-    column = Object.assign({}, this.state);
+    this.props.onSubmit({
+      id: `column-${this.props.columnLength}`,
+      title: this.state.title,
+      cardIds: [],
+    });
 
-    const newState = {
-      ...this.props.state,
-      columns: {
-        ...this.props.state.columns,
-        [column.id]: column,
-      },
-      columnOrder: [...this.props.state.columnOrder].push(column)
-    };
+    this.setState({ title: "" });
 
-    this.setState(newState);
-    // set localStorage.setItem stuff here
+    // const newState = {
+    //   ...this.props.state,
+    //   columns: {
+    //     ...this.props.columns,
+    //     [column.id]: column,
+    //   },
+    //   columnOrder: this.props.columnOrder.concat(`${column.id}`),
+    // };
+
+    // this.setState(newState);
+    // localStorage.setItem("state", JSON.stringify(newState));
   }
 
   render() {
-    // debugger;
     return (
       <div className="list-form-container">
         <form onSubmit={this.handleSubmit} className="list-form">
@@ -64,4 +66,4 @@ class ColumnForm extends React.Component {
   }
 }
 
-export default ColumnForm;
+export default (ColumnForm);
