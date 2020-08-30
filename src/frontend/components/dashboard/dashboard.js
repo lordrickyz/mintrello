@@ -46,24 +46,26 @@ function Dashboard() {
   // const [lists, setLists] = useState(this.props.lists);
 
   return (
-    <DragDropContext onDragEnd={(result) => onDragEnd(result)}>
+    <DragDropContext onDragEnd={(result) => console.log(result)}>
       <div className="board-content">
-        <Droppable droppableId={`dashboard`} key={"dashboard"}>
+        <Droppable droppableId="dashboard" direction="horizontal" type="column">
           {(provided, snapshot) => {
             return (
               <div
                 {...provided.droppableProps}
                 ref={provided.innerRef}
-                // style={{
-                //   background: snapshot.isDraggingOver
-                //     ? "lightblue"
-                //     : "lightgrey",
-                //   padding: 4,
-                //   width: 250,
-                //   minHeight: 500
-                // }}
+                style={{
+                  background: snapshot.isDraggingOver
+                    ? "lightblue"
+                    : "lightgrey",
+                  padding: 4,
+                  width: "100%",
+                  minHeight: 500,
+                }}
               >
                 <Lists />
+                <h2>Text</h2>
+                {provided.placeholder}
               </div>
             );
           }}
