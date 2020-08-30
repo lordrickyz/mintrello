@@ -7,8 +7,6 @@ import splashImageTwo from '../../images/splashfiller2.png';
 import butlerPocket from '../../images/buter-pocket.jpg';
 
 
-
-
 class SplashPage extends React.Component {
   // constructor(props) {
   //   super(props)
