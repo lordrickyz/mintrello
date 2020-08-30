@@ -6,8 +6,9 @@
 .dashboard-container {
     display: flex;
     overflow-x: auto;
-    overflow-y: hidden;
-    box-sizing: border-box;
-    height: calc(100vh);
-    
+    overflow-y: auto;
+}
+
+.dashboard-container::-webkit-scrollbar {
+    display: none;
 }

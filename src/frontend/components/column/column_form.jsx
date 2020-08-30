@@ -1,6 +1,4 @@
 import React from "react";
-import { receiveColumn } from "../../actions/column_actions";
-import { connect } from "react-redux";
 
 class ColumnForm extends React.Component {
   constructor(props) {
@@ -55,10 +53,5 @@ class ColumnForm extends React.Component {
     );
   }
 }
-const mDTP = (dispatch) => {
-  return {
-    receiveColumn: (column) => dispatch(receiveColumn(column)),
-  };
-};
 
 export default ColumnForm;
