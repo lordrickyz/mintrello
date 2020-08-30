@@ -52,44 +52,46 @@ function Columns(props) {
       >
         {Object.entries(columns).map(([columnId, column], index) => {
           return (
-            <h1>{column.title}</h1>
-            // <Draggable key={columnId} draggableId={columnId} index={index}>
-            //   {(provided, snapshot) => {
-            //     return (
-            //       <div
-            //         ref={provided.innerRef}
-            //         {...provided.draggableProps}
-            //         {...provided.dragHandleProps}
-            //         style={{
-            //           userSelect: "none",
-            //           padding: 16,
-            //           margin: 10,
-            //           minHeight: "300px",
-            //           width: "50px",
-            //           backgroundColor: snapshot.isDragging ? "blue" : "red",
-            //           color: "white",
-            //           ...provided.draggableProps.style,
-            //         }}
-            //       >
-            //         <textarea>{column.title}</textarea>
-            //         {/* <div style={{ margin: 8 }}>
-            //           <Droppable droppableId={columnId} key={columnId}>
-            //             {(provided, snapshot) => {
-            //               return (
-            //                 <div
-            //                   ref={provided.innerRef}
-            //                   {...provided.draggableProps}
-            //                   {...provided.dragHandleProps}
-            //                 ></div>
-            //               );
-            //             }}
-            //           </Droppable>
-            //         </div> */}
-            //       </div>
-            //     );
-            //   }}
-            //   ;
-            // </Draggable>
+            <>
+              <h1>{column.title}</h1>
+              <Draggable key={columnId} draggableId={columnId} index={index}>
+                {/* {(provided, snapshot) => {
+                  return (
+                    <div
+                      ref={provided.innerRef}
+                      {...provided.draggableProps}
+                      {...provided.dragHandleProps}
+                      style={{
+                        userSelect: "none",
+                        padding: 16,
+                        margin: 10,
+                        minHeight: "300px",
+                        width: "50px",
+                        backgroundColor: snapshot.isDragging ? "blue" : "red",
+                        color: "white",
+                        ...provided.draggableProps.style,
+                      }}
+                    >
+                      <textarea>{column.title}</textarea>
+                      <div style={{ margin: 8 }}>
+                        <Droppable droppableId={columnId} key={columnId}>
+                          {(provided, snapshot) => {
+                            return (
+                              <div
+                                ref={provided.innerRef}
+                                {...provided.draggableProps}
+                                {...provided.dragHandleProps}
+                              ></div>
+                            );
+                          }}
+                        </Droppable>
+                      </div>
+                    </div>
+                  );
+                }}
+                ; */}
+              </Draggable>
+            </>
           );
         })}
         ;
