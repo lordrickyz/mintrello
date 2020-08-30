@@ -1,10 +1,12 @@
 import React from "react";
+import { receiveColumn } from "../../actions/column_actions";
+import { connect } from "react-redux";
 
 class ColumnForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: "",
+      id: `column-${this.props.nextId}`,
       title: "",
       cardIds: [],
     };
@@ -21,21 +23,24 @@ class ColumnForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger;
+
     let column;
-    this.setState({ id: `column-${this.props.nextId}`});
+
     column = Object.assign({}, this.state);
+    // debugger;
+    // const newState = {
+    //   ...this.props.state,
+    //   columns: {
+    //     ...this.props.state.columns,
+    //     [column.id]: column,
+    //   },
+    //   columnOrder: this.props.state.columnOrder.concat(column.id),
+    // };
+    this.props.receiveColumn(column);
+    debugger;
 
-    const newState = {
-      ...this.props.state,
-      columns: {
-        ...this.props.state.columns,
-        [column.id]: column,
-      },
-      columnOrder: [...this.props.state.columnOrder].push(column)
-    };
-
-    this.setState(newState);
+    // localStorage.setItem("state", JSON.stringify(newState));
+    debugger;
     // set localStorage.setItem stuff here
   }
 
@@ -63,5 +68,10 @@ class ColumnForm extends React.Component {
     );
   }
 }
+const mDTP = (dispatch) => {
+  return {
+    receiveColumn: (column) => dispatch(receiveColumn(column)),
+  };
+};
 
-export default ColumnForm;
+export default connect(null, mDTP)(ColumnForm);

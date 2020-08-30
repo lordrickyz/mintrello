@@ -1,8 +1,7 @@
 import { RECEIVE_CARDS, REMOVE_CARD } from "../actions/card_actions";
 import initialData from "../database/initial_data";
 
-
-const initialState = initialData;
+const initialState = initialData.cards;
 
 const cardReducer = (state = initialState, action) => {
   Object.freeze(state);
