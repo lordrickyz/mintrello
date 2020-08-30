@@ -30,16 +30,23 @@ const mstp = (state) => {
 class DashBoard extends React.Component {
   constructor(props) {
     super(props);
-    debugger;
-    this.state = {
-      cards: this.props.cards,
-      columns: this.props.columns,
-      columnOrder: this.props.columnOrder,
-    };
-    debugger;
-    // localStorage.setItem("state", JSON.stringify(this.state));
+    this.state = this.props.data;
+    localStorage.setItem("state", JSON.stringify(this.state));
   }
   // JSON.parse(localStorage.getItem('state'))
+
+  addColumn = (column) => {
+    const newState = {
+      ...this.state,
+      columns: {
+        ...this.state.columns,
+        [column.id]: column,
+      },
+      columnOrder: this.state.columnOrder.concat(column.id),
+    };
+    this.setState(newState);
+    localStorage.setItem("state", JSON.stringify(newState));
+  };
 
   onDragEnd = (result) => {
     const { destination, source, draggableId, type } = result;
@@ -156,8 +163,10 @@ class DashBoard extends React.Component {
               {provided.placeholder}
 
               <ColumnForm
-                state={this.state}
-                nextId={this.props.columnOrder.length + 1}
+                onSubmit={this.addColumn}
+                columns={this.state.columns}
+                columnLength={this.state.columnOrder.length + 1}
+                columnOrder={this.state.columnOrder}
               />
             </div>
           )}

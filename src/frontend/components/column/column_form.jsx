@@ -6,7 +6,7 @@ class ColumnForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: `column-${this.props.nextId}`,
+      id: `column-${this.props.columnLength}`,
       title: "",
       cardIds: [],
     };
@@ -23,29 +23,28 @@ class ColumnForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.onSubmit({
+      id: `column-${this.props.columnLength}`,
+      title: this.state.title,
+      cardIds: [],
+    });
 
-    let column;
+    this.setState({ title: "" });
 
-    column = Object.assign({}, this.state);
-    // debugger;
     // const newState = {
     //   ...this.props.state,
     //   columns: {
-    //     ...this.props.state.columns,
+    //     ...this.props.columns,
     //     [column.id]: column,
     //   },
-    //   columnOrder: this.props.state.columnOrder.concat(column.id),
+    //   columnOrder: this.props.columnOrder.concat(`${column.id}`),
     // };
-    this.props.receiveColumn(column);
-    debugger;
 
+    // this.setState(newState);
     // localStorage.setItem("state", JSON.stringify(newState));
-    debugger;
-    // set localStorage.setItem stuff here
   }
 
   render() {
-    // debugger;
     return (
       <div className="list-form-container">
         <form onSubmit={this.handleSubmit} className="list-form">
@@ -74,4 +73,4 @@ const mDTP = (dispatch) => {
   };
 };
 
-export default connect(null, mDTP)(ColumnForm);
+export default ColumnForm;
