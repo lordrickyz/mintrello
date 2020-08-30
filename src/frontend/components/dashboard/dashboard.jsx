@@ -1,9 +1,9 @@
 import React from "react";
-import Column from "../column/column"
+import Column from "../column/column";
 import initialData from "../../database/initial_data";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { connect } from "react-redux";
-import ColumnForm from "../column/column_form"
+import ColumnForm from "../column/column_form";
 // import { withRouter } from "react-router";
 
 const mstp = () => {
@@ -16,7 +16,7 @@ const mstp = () => {
 
   return {
     data: data,
-  }
+  };
 };
 
 class DashBoard extends React.Component {
@@ -197,6 +197,7 @@ class DashBoard extends React.Component {
                       totalCards={this.state.cards}
                       index={index}
                       removeCard={this.removeCard}
+                      editCard={this.editCard}
                     />
                   );
                 })}

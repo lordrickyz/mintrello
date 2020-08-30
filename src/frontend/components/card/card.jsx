@@ -12,7 +12,6 @@ const mdtp = (dispatch) => {
 class Card extends React.Component {
   constructor(props) {
     super(props);
-  
   }
 
   render() {
@@ -25,7 +24,11 @@ class Card extends React.Component {
             {...provided.dragHandleProps}
             ref={provided.innerRef}
           >
-            <div onClick={() => this.props.openShowModal(this.props.card)}>
+            <div
+              onClick={() =>
+                this.props.openShowModal([this.props.card, this.props.editCard])
+              }
+            >
               <span id={"card-item-title"}>{this.props.card.title}</span>
             </div>
           </div>
@@ -40,7 +43,7 @@ export default connect(null, mdtp)(Card);
 // class Card extends React.Component {
 //   constructor(props) {
 //     super(props);
-  
+
 //     this.showCardContainer = this.showCardContainer.bind(this)
 //   }
 

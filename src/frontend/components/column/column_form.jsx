@@ -1,15 +1,17 @@
 import React from "react";
+import { receiveColumn } from "../../actions/column_actions";
+import { connect } from "react-redux";
 
 class ColumnForm extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       id: `column-${this.props.columnLength}`,
       title: "",
       cardIds: [],
     };
 
-    this.update = this.update.bind(this)
+    this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -53,5 +55,10 @@ class ColumnForm extends React.Component {
     );
   }
 }
+const mDTP = (dispatch) => {
+  return {
+    receiveColumn: (column) => dispatch(receiveColumn(column)),
+  };
+};
 
-export default (ColumnForm);
+export default ColumnForm;
