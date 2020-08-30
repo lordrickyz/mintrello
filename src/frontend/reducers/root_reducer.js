@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 import modalReducer from "./modal_reducer";
-import listReducer from "./list_reducer";
-// import cardReducer from "./card_reducer";
+import columnReducer from "./column_reducer";
+import cardReducer from "./card_reducer";
 
 const rootReducer = combineReducers({
-  lists: listReducer,
-  cards: {},
+  columns: columnReducer,
+  cards: cardReducer,
   modal: modalReducer,
 });
 

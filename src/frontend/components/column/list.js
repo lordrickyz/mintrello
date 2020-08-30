@@ -42,9 +42,8 @@ function Columns(props) {
       });
     }
   };
-  // debugger;
+
   const [columns, setColumns] = useState(props.lists);
-  debugger;
   return (
     <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
       <DragDropContext
@@ -100,7 +99,7 @@ function Columns(props) {
 
 const mapStateToProps = (state) => {
   return {
-    lists: state.lists,
+    columns: state.columns,
   };
 };
 

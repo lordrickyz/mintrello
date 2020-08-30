@@ -1,3 +1,22 @@
-// Card Reducer Stuff
+import { RECEIVE_CARDS, REMOVE_CARD } from "../actions/card_actions";
+import initialData from "../database/initial_data";
 
-import merge from "lodash/merge";
+
+const initialState = initialData;
+
+const cardReducer = (state = initialState, action) => {
+  Object.freeze(state);
+
+  switch (action.type) {
+    case RECEIVE_CARDS:
+      return action.cards;
+    case REMOVE_CARD:
+      let newState = Object.assign({}, state);
+      delete newState[action.card];
+      return newState;
+    default:
+      return state;
+  }
+};
+
+export default cardReducer;
