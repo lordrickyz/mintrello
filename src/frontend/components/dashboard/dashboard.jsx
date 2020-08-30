@@ -3,6 +3,7 @@ import Column from "../column/column"
 import initialData from "../../database/initial_data";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { connect } from "react-redux";
+import ColumnForm from "../column/column_form"
 // import { withRouter } from "react-router";
 
 const mstp = () => {
@@ -132,6 +133,8 @@ class DashBoard extends React.Component {
                 return <Column key={column.id} column={column} cards={cards} index={index}/>;
               })}
               {provided.placeholder}
+
+              <ColumnForm state={this.state} nextId={ this.state.columnOrder.length + 1 }/>
             </div>
           )}
         </Droppable>

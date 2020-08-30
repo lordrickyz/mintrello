@@ -59,6 +59,7 @@ class Column extends React.Component {
                     <Card key={card.id} card={card} index={index} />
                   ))}
                   {provided.placeholder}
+                  {/* Construct <CardForm> Here */}
                 </div>
               )}
             </Droppable>
