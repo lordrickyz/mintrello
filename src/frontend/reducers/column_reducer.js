@@ -5,7 +5,6 @@ const initialState = initialData.columns;
 
 const columnReducer = (state = initialState, action) => {
   Object.freeze(state);
-  // debugger;
   switch (action.type) {
     case RECEIVE_COLUMNS:
       return Object.assign({}, state, { [action.columns.id]: action.columns });
