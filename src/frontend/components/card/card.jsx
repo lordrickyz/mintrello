@@ -3,39 +3,39 @@ import { Draggable } from "react-beautiful-dnd";
 import { connect } from "react-redux";
 import { openModal } from "../../actions/modal_actions";
 
+const mdtp = (dispatch) => {
+  return {
+    openShowModal: (item) => dispatch(openModal("show-card", item)),
+  };
+};
+
 class Card extends React.Component {
+  constructor(props) {
+    super(props);
+  
+  }
+
   render() {
     return (
       <Draggable draggableId={this.props.card.id} index={this.props.index}>
-
         {(provided, snapshot) => (
-          <div className="card-container"
+          <div
+            className="card-container"
             {...provided.draggableProps}
             {...provided.dragHandleProps}
             ref={provided.innerRef}
           >
-            {this.props.card.title}
+            <div onClick={() => this.props.openShowModal(this.props.card)}>
+              <span id={"card-item-title"}>{this.props.card.title}</span>
+            </div>
           </div>
         )}
-
       </Draggable>
     );
   }
 }
 
-export default Card
-
-// const mstp = () => {
-//   return {
-
-//   }
-// };
-
-// const mdtp = (dispatch) => {
-//   return {
-//     openModal: (modal) => dispatch(openModal(modal)),
-//   };
-// };
+export default connect(null, mdtp)(Card);
 
 // class Card extends React.Component {
 //   constructor(props) {

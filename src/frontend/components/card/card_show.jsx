@@ -4,11 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faPencilAlt, faAlignJustify} from "@fortawesome/free-solid-svg-icons";
 import { closeModal } from "../../actions/modal_actions";
 
-
-const mstp = () => {
-  return {};
-};
-
 const mdtp = (dispatch) => {
   return {
     closeModal: () => dispatch(closeModal()),
@@ -27,7 +22,7 @@ class CardShow extends React.Component {
         <span className="card-title-icon" id="card-show-icons">
           <FontAwesomeIcon icon={faPencilAlt} />
         </span>
-        <textarea className="card-title-editor" spellCheck="false" />
+        <textarea className="card-title-editor" spellCheck="false" value={this.props.card.title}/>
         <span className="card-show-close" onClick={this.props.closeModal}>
           <FontAwesomeIcon icon={faTimes} />
         </span>
@@ -47,6 +42,7 @@ class CardShow extends React.Component {
          </div>
          <textarea
            className="card-description-editor"
+           value={this.props.card.description}
            placeholder="Click here to add a description..."
            spellCheck="false"
          ></textarea>
@@ -63,4 +59,4 @@ class CardShow extends React.Component {
 }
 
 
-export default connect(mstp, mdtp)(CardShow);
+export default connect(null, mdtp)(CardShow);

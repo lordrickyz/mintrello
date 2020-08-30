@@ -144,4 +144,4 @@ class DashBoard extends React.Component {
 
 }
 
-export default connect(mstp)(DashBoard);
+export default connect(mstp, null)(DashBoard);
