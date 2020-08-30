@@ -1,4 +1,16 @@
 // where everything exists
+// .dashboard-container {
+//   display: flex;
+// }
+
 .dashboard-container {
-  display: flex;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background-image: url("../../images/dashboardBG.jpg");
+    min-height: 100vh;
+}
+
+.dashboard-container::-webkit-scrollbar {
+    display: none;
 }

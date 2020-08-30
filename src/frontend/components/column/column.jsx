@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "../card/card";
-import { Droppable, Draggable } from "react-beautiful-dnd";
+import { Droppable, Draggable } from 'react-beautiful-dnd';
+import CardForm from "../card/card_form"
 
 class Column extends React.Component {
   render() {
@@ -32,7 +33,13 @@ class Column extends React.Component {
                     />
                   ))}
                   {provided.placeholder}
-                  {/* Construct <CardForm> Here */}
+
+                  <CardForm
+                    column={this.props.column}
+                    onSubmit={this.props.addCard}
+                    cards={this.props.cards}
+                    cardLength={Object.keys(this.props.totalCards).length + 1}
+                  />
                 </div>
               )}
             </Droppable>

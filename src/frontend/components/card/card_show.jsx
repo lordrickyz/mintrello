@@ -27,7 +27,6 @@ class CardShow extends React.Component {
   }
 
   update(field) {
-    // debugger;
     return (e) => {
       this.setState({ [field]: e.currentTarget.value });
     };
@@ -39,7 +38,6 @@ class CardShow extends React.Component {
   }
 
   render() {
-    debugger;
     const titleBlock = (
       <div className="card-title-container">
         <span className="card-title-icon" id="card-show-icons">

@@ -10,9 +10,6 @@ const mdtp = (dispatch) => {
 };
 
 class Card extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (
@@ -39,25 +36,3 @@ class Card extends React.Component {
 }
 
 export default connect(null, mdtp)(Card);
-
-// class Card extends React.Component {
-//   constructor(props) {
-//     super(props);
-
-//     this.showCardContainer = this.showCardContainer.bind(this)
-//   }
-
-//   showCardContainer(cardId) {
-//     this.props.openModal("show-card");
-//   }
-
-//   render() {
-//     return (
-//       <>
-//         <button onClick={this.showCardContainer} />
-//       </>
-//     );
-//   }
-// }
-
-// export default connect(mstp, mdtp)(Card);

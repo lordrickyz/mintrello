@@ -1,12 +1,12 @@
 import React from "react";
 
-class ColumnForm extends React.Component {
+class CardForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: `column-${this.props.columnLength}`,
+      id: `card-${this.props.cardLength}`,
       title: "",
-      cardIds: [],
+      description: "",
     };
 
     this.update = this.update.bind(this);
@@ -21,32 +21,34 @@ class ColumnForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.onSubmit({
-      id: `column-${this.props.columnLength}`,
+    this.props.onSubmit((this.props.column),
+    { id: `card-${this.props.cardLength}`,
       title: this.state.title,
-      cardIds: [],
+      description: "",
     });
 
-    this.setState({ title: "" });
+    this.setState({ 
+      title: "",
+   });
   }
 
   render() {
     return (
-      <div className="list-form-container">
-        <form onSubmit={this.handleSubmit} className="list-form">
+      <div className="card-form-container">
+        <form onSubmit={this.handleSubmit} className="card-form">
           <input
             type="text"
             value={this.state.title}
             onChange={this.update("title")}
-            className="list-input-title"
-            placeholder="Enter Column Title..."
+            className="card-input-title"
+            placeholder="Enter Card Title"
           />
 
           <input
             type="submit"
-            value="+Add List"
+            value="+Add Card"
             disabled={!this.state.title}
-            className="list-input-submit"
+            className="card-input-submit"
           />
         </form>
       </div>
@@ -54,4 +56,4 @@ class ColumnForm extends React.Component {
   }
 }
 
-export default ColumnForm;
+export default CardForm;
