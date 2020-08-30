@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import Card from "../card/card";
-import { Droppable, Draggable } from 'react-beautiful-dnd';
+import { Droppable, Draggable } from "react-beautiful-dnd";
 
 class Column extends React.Component {
   render() {
@@ -24,7 +24,12 @@ class Column extends React.Component {
                   {...provided.droppableProps}
                 >
                   {this.props.cards.map((card, index) => (
-                    <Card key={card.id} card={card} index={index} />
+                    <Card
+                      key={card.id}
+                      card={card}
+                      index={index}
+                      editCard={this.props.editCard}
+                    />
                   ))}
                   {provided.placeholder}
                   {/* Construct <CardForm> Here */}
@@ -38,4 +43,4 @@ class Column extends React.Component {
   }
 }
 
-export default Column
+export default Column;

@@ -4,26 +4,18 @@ import initialData from "../../database/initial_data";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { connect } from "react-redux";
 import ColumnForm from "../column/column_form";
-import { receiveColumn } from "../../actions/column_actions";
 // import { withRouter } from "react-router";
 
-// const mstp = () => {
-//   let data;
-//   if (localStorage.getItem("state") != null) {
-//     data = JSON.parse(localStorage.getItem("state"));
-//   } else {
-//     data = initialData;
-//   }
+const mstp = () => {
+  let data;
+  if (localStorage.getItem("state") != null) {
+    data = JSON.parse(localStorage.getItem("state"));
+  } else {
+    data = initialData;
+  }
 
-//   return {
-//     data: data,
-//   };
-// };
-const mstp = (state) => {
   return {
-    columnOrder: Object.values(state.columnOrder),
-    cards: state.cards,
-    columns: state.columns,
+    data: data,
   };
 };
 
@@ -34,6 +26,18 @@ class DashBoard extends React.Component {
     localStorage.setItem("state", JSON.stringify(this.state));
   }
   // JSON.parse(localStorage.getItem('state'))
+  editCard = (card) => {
+    debugger;
+    const newState = {
+      ...this.state,
+      cards: {
+        ...this.state.cards,
+        [card.id]: card,
+      },
+    };
+    this.setState(newState);
+    localStorage.setItem("state", JSON.stringify(newState));
+  };
 
   addColumn = (column) => {
     const newState = {
@@ -72,7 +76,7 @@ class DashBoard extends React.Component {
         columnOrder: newColumnOrder,
       };
       this.setState(newState);
-      // localStorage.setItem("state", JSON.stringify(newState));
+      localStorage.setItem("state", JSON.stringify(newState));
       return;
     }
 
@@ -98,7 +102,7 @@ class DashBoard extends React.Component {
       };
 
       this.setState(newState);
-      // localStorage.setItem("state", JSON.stringify(newState));
+      localStorage.setItem("state", JSON.stringify(newState));
       return;
     }
 
@@ -127,11 +131,11 @@ class DashBoard extends React.Component {
     };
 
     this.setState(newState);
-    // localStorage.setItem("state", JSON.stringify(newState));
+    localStorage.setItem("state", JSON.stringify(newState));
   };
 
   render() {
-    debugger;
+    // debugger;
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
         <Droppable
@@ -157,6 +161,7 @@ class DashBoard extends React.Component {
                     column={column}
                     cards={cards}
                     index={index}
+                    editCard={this.editCard}
                   />
                 );
               })}
