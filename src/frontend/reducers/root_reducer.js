@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
 import modalReducer from "./modal_reducer";
-// import listReducer from "./list_reducer"
+import listReducer from "./list_reducer";
 // import cardReducer from "./card_reducer";
 
 const rootReducer = combineReducers({
-  lists: {},
+  lists: listReducer,
   cards: {},
   modal: modalReducer,
-})
+});
 
 export default rootReducer;
