@@ -25,6 +25,8 @@ class Card extends React.Component {
               onClick={() =>
                 this.props.openShowModal([this.props.card, this.props.editCard, this.props.removeCard, this.props.column ])
               }
+
+              id={"card-click-container"}
             >
               <span id={"card-item-title"}>{this.props.card.title}</span>
             </div>
