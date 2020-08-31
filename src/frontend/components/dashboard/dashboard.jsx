@@ -55,7 +55,17 @@ class DashBoard extends React.Component {
   }
 
   removeColumn = (column) => {
-   
+    const newOrder = this.state.columnOrder.filter(item => item !== column.id)
+    let newColumns = Object.assign({}, this.state.columns);
+    delete newColumns[column]
+
+    const newState = {
+      ...this.state,
+      columns: newColumns,
+      columnOrder: newOrder,
+    };
+    this.setState(newState);
+    localStorage.setItem("state", JSON.stringify(newState));
   }
 
   // Adding Cards
@@ -93,7 +103,26 @@ class DashBoard extends React.Component {
   }
 
   removeCard = (column, card) => {
+    let cardId = card.id, columnId = column.id;
 
+    let newCards = Object.assign({}, this.state.cards);
+    delete newCards[card]
+
+    const newCardIds = this.state.columns[columnId].cardIds.filter(item => item !== cardId)
+
+    const newState = {
+      ...this.state,
+      cards: newCards,
+      columns: {
+        ...this.state.columns,
+        [columnId]: {
+          ...column,
+          cardIds: newCardIds,
+        }
+      },
+    };
+    this.setState(newState);
+    localStorage.setItem("state", JSON.stringify(newState));
   }
 
   // Drag and Drop Function
@@ -202,15 +231,17 @@ class DashBoard extends React.Component {
 
                   return (
                     <Column
-                      addCard={this.addCard}
                       key={column.id}
                       column={column}
+                      columnOrder={this.state.columnOrder}
                       cards={cards}
                       totalCards={this.state.cards}
                       index={index}
-                      removeCard={this.removeCard}
+                      addCard={this.addCard}
                       editCard={this.editCard}
+                      removeCard={this.removeCard}
                       editColumn={this.editColumn}
+                      removeColumn={this.removeColumn}
                     />
                   );
                 })}

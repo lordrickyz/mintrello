@@ -13,7 +13,7 @@ class Column extends React.Component {
     };
     this.update = this.update.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    this.handleKeyEscaper = this.handleKeyEscaper.bind(this)
+    this.deleteColumn = this.deleteColumn.bind(this);
   }
 
   update(field) {
@@ -22,16 +22,13 @@ class Column extends React.Component {
     };
   }
 
-  handleKeyEscaper(e) {
-    if (e.key === "Escape" || e.key === "Enter") {
-      e.target.blur();
-    }
-  }
-
   handleClick(e) {
     this.props.editColumn(this.state);
   }
 
+  deleteColumn() {
+    this.props.removeColumn(this.props.column)
+  }
 
   render() {
     return (
@@ -46,7 +43,6 @@ class Column extends React.Component {
               <textarea
                 className="list-name-editor"
                 onBlur={this.handleClick}
-                onKeyDown={this.handleKeyEscaper}
                 onChange={this.update("title")}
                 defaultValue={this.props.column.title}
               ></textarea>
@@ -63,8 +59,10 @@ class Column extends React.Component {
                     <Card
                       key={card.id}
                       card={card}
+                      column={this.props.column}
                       index={index}
                       editCard={this.props.editCard}
+                      removeCard={this.props.removeCard}
                     />
                   ))}
                   {provided.placeholder}
@@ -75,6 +73,9 @@ class Column extends React.Component {
                     cards={this.props.cards}
                     cardLength={Object.keys(this.props.totalCards).length + 1}
                   />
+                  <button onClick={this.deleteColumn}>
+                    Remove Column
+                  </button>
                 </div>
               )}
             </Droppable>
