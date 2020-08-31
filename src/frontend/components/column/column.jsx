@@ -73,7 +73,7 @@ class Column extends React.Component {
                     cards={this.props.cards}
                     cardLength={Object.keys(this.props.totalCards).length + 1}
                   />
-                  <button onClick={this.deleteColumn}>
+                  <button className= 'remove-clmn-btn' onClick={this.deleteColumn}>
                     Remove Column
                   </button>
                 </div>

@@ -12,19 +12,24 @@
 }
 
 .card-form-container {
-  border: 2px solid rgb(196, 196, 196);
+  
+  border: 1px solid black;
   border-radius: 3px;
   height: 100%;
   box-sizing: border-box;
   display: inline-block;
   vertical-align: top;
   white-space: nowrap;
+  margin-bottom: 5px;
+  
 }
 
 .card-form {
+  
   width: inherit;
-  background-color: #ebecf0;
-  border-radius: 3px;
+  // background-color: #ebecf0;
+  // background-color: #6699cc;
+  background-color: #57558a;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -32,11 +37,13 @@
 }
 
 .card-input-title {
-  font-size: 14px;
+  font-family: $secondary-font;
+  font-size: 17px;
   line-height: 20px;
   padding: 8px 12px;
   background-color: white;
   border: none;
+  border-bottom: 1px solid black;
   border-radius: 3px;
 }
 
@@ -47,19 +54,24 @@
 }
 
 .card-input-submit {
-  background-color: #e6563d;
+  font-family: $secondary-font;
+  color: white !important;
+  background-color: $secondary-peppermint-red !important;
   box-shadow: none;
-  border: none;
+  border: 1px solid black;
   border-radius: 3px;
   color: white;
   height: 32px;
   margin-top: 4px;
+  margin-bottom: 3px;
+  margin-left: 4px;
   padding-top: 4px;
   padding-bottom: 4px;
   cursor: pointer;
   line-height: 20px;
   width: 80px;
-  font-size: 14px;
+  font-size: 15px;
+  text-emphasis: bold;
 }
 
 .card-input-submit:hover {
