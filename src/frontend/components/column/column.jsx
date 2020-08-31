@@ -4,6 +4,35 @@ import { Droppable, Draggable } from 'react-beautiful-dnd';
 import CardForm from "../card/card_form"
 
 class Column extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: this.props.column.id,
+      title: this.props.column.title,
+      cardIds: this.props.column.cardIds,
+    };
+    this.update = this.update.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.handleKeyEscaper = this.handleKeyEscaper.bind(this)
+  }
+
+  update(field) {
+    return (e) => {
+      this.setState({ [field]: e.target.value });
+    };
+  }
+
+  handleKeyEscaper(e) {
+    if (e.key === "Escape" || e.key === "Enter") {
+      e.target.blur();
+    }
+  }
+
+  handleClick(e) {
+    this.props.editColumn(this.state);
+  }
+
+
   render() {
     return (
       <Draggable draggableId={this.props.column.id} index={this.props.index}>
@@ -14,7 +43,13 @@ class Column extends React.Component {
             ref={provided.innerRef}
           >
             <div className="column-item-header" {...provided.dragHandleProps}>
-              {this.props.column.title}
+              <textarea
+                className="list-name-editor"
+                onBlur={this.handleClick}
+                onKeyDown={this.handleKeyEscaper}
+                onChange={this.update("title")}
+                defaultValue={this.props.column.title}
+              ></textarea>
             </div>
 
             <Droppable droppableId={this.props.column.id}>

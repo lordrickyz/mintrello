@@ -41,9 +41,21 @@ class DashBoard extends React.Component {
     localStorage.setItem("state", JSON.stringify(newState));
   };
 
+  editColumn = (column) => {
+    const newState = {
+      ...this.state,
+      columns: {
+        ...this.state.columns,
+        [column.id]: column,
+      },
+    }
+
+    this.setState(newState);
+    localStorage.setItem("state", JSON.stringify(newState));
+  }
+
   removeColumn = (column) => {
-    delete this.state.columns[column.id];
-    return;
+   
   }
 
   // Adding Cards
@@ -198,6 +210,7 @@ class DashBoard extends React.Component {
                       index={index}
                       removeCard={this.removeCard}
                       editCard={this.editCard}
+                      editColumn={this.editColumn}
                     />
                   );
                 })}
