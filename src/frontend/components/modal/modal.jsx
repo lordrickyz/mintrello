@@ -11,7 +11,7 @@ const Modal = ({ modal, closeModal }) => {
   let component;
   switch (modal.type) {
     case "show-card":
-      component = <CardShow card={modal.item[0]} editCard={modal.item[1]} />;
+      component = <CardShow card={modal.item[0]} editCard={modal.item[1]} removeCard={modal.item[2]} column={modal.item[3]} />;
       break;
     default:
       return null;

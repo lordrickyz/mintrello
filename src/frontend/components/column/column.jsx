@@ -59,6 +59,7 @@ class Column extends React.Component {
                     <Card
                       key={card.id}
                       card={card}
+                      column={this.props.column}
                       index={index}
                       editCard={this.props.editCard}
                       removeCard={this.props.removeCard}

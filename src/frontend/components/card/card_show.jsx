@@ -24,6 +24,7 @@ class CardShow extends React.Component {
     };
     this.update = this.update.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.deleteCard = this.deleteCard.bind(this)
   }
 
   update(field) {
@@ -35,6 +36,11 @@ class CardShow extends React.Component {
   handleClick(event) {
     this.props.closeModal();
     this.props.editCard(this.state);
+  }
+
+  deleteCard() {
+    this.props.removeCard(this.props.column, this.props.card)
+    this.props.closeModal();
   }
 
   render() {
@@ -82,6 +88,7 @@ class CardShow extends React.Component {
       <div className="card-show">
         <div className="card-show-title"> {titleBlock} </div>
         <div className="card-show-desc"> {descriptionBlock} </div>
+        <button onClick={this.deleteCard}> Delete Card</button>
       </div>
     );
   }

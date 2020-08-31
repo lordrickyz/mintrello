@@ -102,8 +102,27 @@ class DashBoard extends React.Component {
     localStorage.setItem("state", JSON.stringify(newState));
   }
 
-  removeCard = (card) => {
+  removeCard = (column, card) => {
+    let cardId = card.id, columnId = column.id;
 
+    let newCards = Object.assign({}, this.state.cards);
+    delete newCards[card]
+
+    const newCardIds = this.state.columns[columnId].cardIds.filter(item => item !== cardId)
+
+    const newState = {
+      ...this.state,
+      cards: newCards,
+      columns: {
+        ...this.state.columns,
+        [columnId]: {
+          ...column,
+          cardIds: newCardIds,
+        }
+      },
+    };
+    this.setState(newState);
+    localStorage.setItem("state", JSON.stringify(newState));
   }
 
   // Drag and Drop Function
