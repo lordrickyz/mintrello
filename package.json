@@ -1,6 +1,6 @@
 {
   "name": "mintrello",
-  "description": "This project was generated from the Mintbean react-gh-pages template using the mintbean-cli tool.",
+  "description": "This project is for MintBean's JS Bootcamp Hackathon",
   "version": "0.1.0",
   "homepage": ".",
   "private": true,

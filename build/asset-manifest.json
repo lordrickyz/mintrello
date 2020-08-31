@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "./static/css/main.6c7a6e37.chunk.css",
+    "main.js": "./static/js/main.04f2592a.chunk.js",
+    "main.js.map": "./static/js/main.04f2592a.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.223b2601.js",
+    "runtime-main.js.map": "./static/js/runtime-main.223b2601.js.map",
+    "static/js/2.73c0b7d0.chunk.js": "./static/js/2.73c0b7d0.chunk.js",
+    "static/js/2.73c0b7d0.chunk.js.map": "./static/js/2.73c0b7d0.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.f138f344193e0955b78e2e386d4e15b1.js": "./precache-manifest.f138f344193e0955b78e2e386d4e15b1.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.6c7a6e37.chunk.css.map": "./static/css/main.6c7a6e37.chunk.css.map",
+    "static/js/2.73c0b7d0.chunk.js.LICENSE.txt": "./static/js/2.73c0b7d0.chunk.js.LICENSE.txt",
+    "static/media/Mintrello-Butler.gif": "./static/media/Mintrello-Butler.39efeebc.gif",
+    "static/media/buter-pocket.jpg": "./static/media/buter-pocket.824b9f8c.jpg",
+    "static/media/index.scss": "./static/media/dashboardBG.3e2d29d5.jpg",
+    "static/media/splashfiller1.png": "./static/media/splashfiller1.ee384d2f.png",
+    "static/media/splashfiller2.png": "./static/media/splashfiller2.5c7153b6.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.223b2601.js",
+    "static/js/2.73c0b7d0.chunk.js",
+    "static/css/main.6c7a6e37.chunk.css",
+    "static/js/main.04f2592a.chunk.js"
+  ]
+}

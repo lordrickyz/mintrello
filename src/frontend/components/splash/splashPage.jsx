@@ -26,7 +26,7 @@ class SplashPage extends React.Component {
             <p>Keep project planning sweet and simple</p>
             <ul className='start-buttons-container'>
               <li><button className='left-start-btn'>Tutorial</button></li>
-              <li><button className='right-start-btn'>Get Started</button></li>
+              <li><a href="#/dashboard"><button className='right-start-btn'>Get Started</button></a></li>
             </ul>
           </div>
         </div>
