@@ -1,8 +1,8 @@
 import React from "react";
 import Navbar from "../nav/navbar";
 import butler from "../../images/Mintrello-Butler.gif";
-import splashImageOne from "../../images/drag_card.gif";
-import splashImageTwo from "../../images/editing_card.gif";
+import splashImageOne from "../../images/splashfiller1.gif";
+import splashImageTwo from "../../images/splashfiller2.gif";
 import butlerPocket from '../../images/buter-pocket.jpg';
 import Footer from './footer'
 import { Link } from 'react-router-dom';
