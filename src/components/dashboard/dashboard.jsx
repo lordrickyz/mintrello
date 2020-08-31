@@ -213,9 +213,9 @@ class DashBoard extends React.Component {
 
   render() {
     return (
-      <>
-        <Navbar />
-        <DragDropContext onDragEnd={this.onDragEnd}>
+      <div>
+      <header className='dashboard-nav'><Navbar/></header>
+      <DragDropContext onDragEnd={this.onDragEnd}>
           <Droppable
             droppableId="all-columns"
             direction="horizontal"
@@ -260,8 +260,8 @@ class DashBoard extends React.Component {
               </div>
             )}
           </Droppable>
-        </DragDropContext>
-      </>
+      </DragDropContext>
+      </div>
     );
   }
 }
