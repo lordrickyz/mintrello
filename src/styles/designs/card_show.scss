@@ -65,7 +65,7 @@
 
 .card-title-editor {
   resize: none;
-  margin-top: 17px;
+  top: 17px;
   color: white;
   position: relative;
   font-family: $secondary-font;
@@ -78,6 +78,10 @@
   background: transparent;
   border: 2px solid transparent;
   padding: 0 4px;
+}
+
+.card-title-editor::-webkit-scrollbar {
+    display: none;
 }
 
 .card-show-listname {
@@ -121,6 +125,10 @@
   font-family: $secondary-font;
   // border: 2px solid transparent;
   color: white;
+}
+
+.card-description-editor::-webkit-scrollbar {
+    display: none;
 }
 
 .card-description-editor::placeholder {
