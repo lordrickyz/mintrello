@@ -48,29 +48,60 @@
   width: 230px;
   margin: 8px;
   height: 100%;
+  // box-sizing: border-box;
+  // display: inline-block;
+  // vertical-align: top;
+  // white-space: nowrap;
+  
+ 
+  height: 100%;
   box-sizing: border-box;
   display: inline-block;
   vertical-align: top;
   white-space: nowrap;
+  margin-bottom: 5px;
 }
 
 .list-form {
+  margin-top: 4px;
   width: inherit;
-  padding: 4px 8px;
-  background-color: #ebecf0;
+  // padding: 4px 8px;
+  // background-color: #ebecf0;
+  // border: 2px solid black;
+  // background-color: #57558a;
+  // border-radius: 4px;
+  // box-sizing: border-box;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
+  border: 1px solid black;
   border-radius: 3px;
+  // background-color: #ebecf0;
+  // background-color: #6699cc;
+  background-color: #57558a;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  
 }
 
 .list-input-title {
-  font-size: 14px;
+  // font-size: 15px;
+  // line-height: 30px;
+  // padding: 8px 12px;
+  // background-color: white;
+  // border: none;
+  // border-radius: 3px;
+
+  font-family: $secondary-font;
+  font-size: 17px;
   line-height: 20px;
   padding: 8px 12px;
   background-color: white;
   border: none;
+  border-bottom: 1px solid black;
   border-radius: 3px;
 }
 
@@ -79,19 +110,37 @@
 }
 
 .list-input-submit {
-  background-color: #e6563d;
+  // background-color: #e6563d;
+  // box-shadow: none;
+  // border: none;
+  // border-radius: 3px;
+  // color: white;
+  // height: 32px;
+  // margin-top: 4px;
+  // padding-top: 4px;
+  // padding-bottom: 4px;
+  // cursor: pointer;
+  // line-height: 20px;
+  // width: 72px;
+  // font-size: 14px;
+  font-family: $secondary-font;
+  color: white !important;
+  background-color: $secondary-peppermint-red !important;
   box-shadow: none;
-  border: none;
+  border: 1px solid black;
   border-radius: 3px;
   color: white;
   height: 32px;
   margin-top: 4px;
+  margin-bottom: 3px;
+  margin-left: 4px;
   padding-top: 4px;
   padding-bottom: 4px;
   cursor: pointer;
   line-height: 20px;
-  width: 72px;
-  font-size: 14px;
+  width: 80px;
+  font-size: 15px;
+  text-emphasis: bold;
 }
 
 .list-input-submit:hover {
