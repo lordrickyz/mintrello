@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "./static/css/main.0ba9d561.chunk.css",
+    "main.css": "./static/css/main.448703be.chunk.css",
     "main.js": "./static/js/main.e9530c66.chunk.js",
     "main.js.map": "./static/js/main.e9530c66.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.223b2601.js",
@@ -8,9 +8,9 @@
     "static/js/2.f4831a28.chunk.js": "./static/js/2.f4831a28.chunk.js",
     "static/js/2.f4831a28.chunk.js.map": "./static/js/2.f4831a28.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.23d8abf3e5692ca388bf683d7ea4f82c.js": "./precache-manifest.23d8abf3e5692ca388bf683d7ea4f82c.js",
+    "precache-manifest.43297ffde27af39f09dc21339b7bff5d.js": "./precache-manifest.43297ffde27af39f09dc21339b7bff5d.js",
     "service-worker.js": "./service-worker.js",
-    "static/css/main.0ba9d561.chunk.css.map": "./static/css/main.0ba9d561.chunk.css.map",
+    "static/css/main.448703be.chunk.css.map": "./static/css/main.448703be.chunk.css.map",
     "static/js/2.f4831a28.chunk.js.LICENSE.txt": "./static/js/2.f4831a28.chunk.js.LICENSE.txt",
     "static/media/Mintrello-Butler.gif": "./static/media/Mintrello-Butler.39efeebc.gif",
     "static/media/buter-pocket.jpg": "./static/media/buter-pocket.824b9f8c.jpg",
@@ -29,7 +29,7 @@
   "entrypoints": [
     "static/js/runtime-main.223b2601.js",
     "static/js/2.f4831a28.chunk.js",
-    "static/css/main.0ba9d561.chunk.css",
+    "static/css/main.448703be.chunk.css",
     "static/js/main.e9530c66.chunk.js"
   ]
 }
