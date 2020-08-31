@@ -12,17 +12,6 @@
     top: 0;
     z-index: 10;
   }
-
-  footer {
-    left: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 30px;
-    padding: 15px;
-
-    color: white;
-    background-color: #2e4d58;
-  }
 }
 
   .splash-page-top {
@@ -32,7 +21,6 @@
     flex-wrap: wrap;
     justify-content: space-between;
     
-
 
     .butler-gif {
       // position: relative;
@@ -44,7 +32,7 @@
 
     .splash-page-main-words{
       margin-top: 5%;
-      margin-right: 100px;
+      margin-right: 140px;
       
     
       h1 {

@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "./static/css/main.f8d5db8e.chunk.css",
+    "main.js": "./static/js/main.38964268.chunk.js",
+    "main.js.map": "./static/js/main.38964268.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.223b2601.js",
+    "runtime-main.js.map": "./static/js/runtime-main.223b2601.js.map",
+    "static/js/2.f4831a28.chunk.js": "./static/js/2.f4831a28.chunk.js",
+    "static/js/2.f4831a28.chunk.js.map": "./static/js/2.f4831a28.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.d042863426989c48c02a8cf39e3a6c37.js": "./precache-manifest.d042863426989c48c02a8cf39e3a6c37.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.f8d5db8e.chunk.css.map": "./static/css/main.f8d5db8e.chunk.css.map",
+    "static/js/2.f4831a28.chunk.js.LICENSE.txt": "./static/js/2.f4831a28.chunk.js.LICENSE.txt",
+    "static/media/Mintrello-Butler.gif": "./static/media/Mintrello-Butler.39efeebc.gif",
+    "static/media/buter-pocket.jpg": "./static/media/buter-pocket.824b9f8c.jpg",
+    "static/media/create_card.gif": "./static/media/create_card.e02e90dd.gif",
+    "static/media/create_list.gif": "./static/media/create_list.1793de08.gif",
+    "static/media/index.scss": "./static/media/dashboardBG.3e2d29d5.jpg",
+    "static/media/delete_card.gif": "./static/media/delete_card.d5c40bbd.gif",
+    "static/media/drag_card.gif": "./static/media/drag_card.f8d9833a.gif",
+    "static/media/drag_lists.gif": "./static/media/drag_lists.c21e6655.gif",
+    "static/media/editing_card.gif": "./static/media/editing_card.7b65175d.gif",
+    "static/media/list_title.gif": "./static/media/list_title.403b96b8.gif",
+    "static/media/main.png": "./static/media/main.373b7ed1.png",
+    "static/media/modify_card.gif": "./static/media/modify_card.cbf2fc81.gif",
+    "static/media/remove_column.gif": "./static/media/remove_column.9a7171d6.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.223b2601.js",
+    "static/js/2.f4831a28.chunk.js",
+    "static/css/main.f8d5db8e.chunk.css",
+    "static/js/main.38964268.chunk.js"
+  ]
+}

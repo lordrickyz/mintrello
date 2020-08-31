@@ -1,0 +1,57 @@
+.tutorial-bg {
+  background-image: linear-gradient(whitesmoke, #FAF0F8);
+  background-repeat: repeat-y;
+}
+
+.tutorial {
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  
+
+  h1 {
+    font-family: "Modak", cursive;
+    font-size: 70px;
+    color: red;
+  }
+  h3 {
+    font-family: "Modak", cursive;
+    font-size: 48px;
+    color: red;
+  }
+  h1:last-child {
+    margin-top: 50px;
+  }
+  p {
+    font-size: 18px;
+  }
+  .tutorial-steps {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    .inner-text {
+      padding: 20px;
+    }
+    img {
+      width: 40%;
+      height: 200px;
+    }
+  }
+}
+
+
+.tutorial-to-dashboard {
+  text-decoration: none;
+
+  h1{
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  transition: all .5s ease;
+  }
+
+  h1:hover {
+  font-size: 80px;
+  }
+}
