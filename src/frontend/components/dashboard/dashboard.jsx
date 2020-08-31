@@ -5,6 +5,7 @@ import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { connect } from "react-redux";
 import ColumnForm from "../column/column_form";
 // import { withRouter } from "react-router";
+import Navbar from '../nav/navbar';
 
 const mstp = () => {
   let data;
@@ -211,6 +212,8 @@ class DashBoard extends React.Component {
 
   render() {
     return (
+      <div>
+      <header className='dashboard-nav'><Navbar/></header>
       <DragDropContext onDragEnd={this.onDragEnd}>
           <Droppable
             droppableId="all-columns"
@@ -257,6 +260,7 @@ class DashBoard extends React.Component {
             )}
           </Droppable>
       </DragDropContext>
+      </div>
     );
   }
 }

@@ -4,18 +4,31 @@
   border: 1px solid grey;
   border-radius: 2px;
   width: 220px;
-  background-color: rgb(230, 86, 61);
+  // background-color: rgb(230, 86, 61);
+  background-color: $secondary-peppermint-red;
   display: flex;
   flex-direction: column;
   height: fit-content;
+  border: 2px solid rgb(197, 121, 121);
+  @include standardRadius;
 }
 
 .column-item-header {
   padding: 8px;
+
+  textarea {
+    width: 70%;
+    font-family: $secondary-font;
+    color: black;
+    font-size: 30px;
+    margin-top: 2px;
+  }
+  
 }
 
 // where the cards exists.
 .column-card-container {
+  border-top: 2px solid black;
   padding: 8px;
   flex-grow: 1;
   flex-direction: column;

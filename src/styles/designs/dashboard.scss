@@ -4,11 +4,16 @@
 // }
 
 .dashboard-container {
+    padding-top: 20px;
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
     background-image: url("../../images/dashboardBG.jpg");
     min-height: 100vh;
+
+    div header {
+        margin-bottom: 20px;
+    }
 }
 
 .dashboard-container::-webkit-scrollbar {
