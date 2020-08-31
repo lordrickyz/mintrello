@@ -1,0 +1,62 @@
+.footer {
+  font-family: "Ubuntu Condensed", sans-serif;
+  display: block;
+  padding-top: 20px;
+  height: 120px;
+  bottom: 0;
+  color: white;
+  text-align: center;
+  background-color: #2e4d58;
+
+  h1 {
+    font-size: 30px;
+  }
+}
+
+.footer-desc {
+  display: flex;
+  justify-content: space-around;
+
+
+  h3 {
+    margin-top: 10px;
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+}
+
+.github-links {
+  a {
+  padding-left: 20px;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  transition: all .5s ease;
+
+  }
+
+  a:hover {
+    color: #478da7;
+    font-size: 25px;
+  }
+}
+
+.linkedin-links {
+  a {
+  padding-right: 20px;
+  color: white;
+  font-size: 20px; 
+  text-decoration: none;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  transition: all .5s ease;
+  }
+
+  a:hover {
+    color: #478da7;
+    font-size: 25px;
+  }
+
+}
