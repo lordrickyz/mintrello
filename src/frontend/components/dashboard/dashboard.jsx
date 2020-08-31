@@ -55,7 +55,17 @@ class DashBoard extends React.Component {
   }
 
   removeColumn = (column) => {
-   
+    const newOrder = this.state.columnOrder.filter(item => item !== column.id)
+    let newColumns = Object.assign({}, this.state.columns);
+    delete newColumns[column]
+
+    const newState = {
+      ...this.state,
+      columns: newColumns,
+      columnOrder: newOrder,
+    };
+    this.setState(newState);
+    localStorage.setItem("state", JSON.stringify(newState));
   }
 
   // Adding Cards
@@ -92,7 +102,7 @@ class DashBoard extends React.Component {
     localStorage.setItem("state", JSON.stringify(newState));
   }
 
-  removeCard = (column, card) => {
+  removeCard = (card) => {
 
   }
 
@@ -202,15 +212,17 @@ class DashBoard extends React.Component {
 
                   return (
                     <Column
-                      addCard={this.addCard}
                       key={column.id}
                       column={column}
+                      columnOrder={this.state.columnOrder}
                       cards={cards}
                       totalCards={this.state.cards}
                       index={index}
-                      removeCard={this.removeCard}
+                      addCard={this.addCard}
                       editCard={this.editCard}
+                      removeCard={this.removeCard}
                       editColumn={this.editColumn}
+                      removeColumn={this.removeColumn}
                     />
                   );
                 })}
