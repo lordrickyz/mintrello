@@ -92,5 +92,27 @@
   color: #a5adba;
 }
 
+.list-name-editor {
+  background: transparent;
+  border: none;
+  border-radius: 3px;
+  box-shadow: none;
+  font-weight: 600;
+  font-size: 16px;
+  margin: -4px 0;
+  padding: 4px 8px;
+  max-height: 256px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  resize: none;
+  cursor: pointer;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.list-name-editor:focus {
+  background-color: white;
+  cursor: text;
+}
 
 
