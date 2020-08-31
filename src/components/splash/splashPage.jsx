@@ -82,10 +82,9 @@ class SplashPage extends React.Component {
           </li>
         </ul>
 
-        <Footer/>
+        <Footer />
       </div>
     );
-
   }
 }
 

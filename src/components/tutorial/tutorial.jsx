@@ -5,14 +5,14 @@ import "./tutorial.scss";
 import main from "../../images/main.png";
 import { Link } from "react-router-dom";
 import dragCard from "../../images/drag_card.gif";
-import createList from "../../images/create_list.gif";
-import dragList from "../../images/drag_lists.gif";
-import editCard from "../../images/editing_card.gif";
-import cardDescription from "../../images/modify_card.gif";
+import createList from "../../images/create_newlist.gif";
+import dragList from "../../images/drag_list.gif";
+import editCard from "../../images/edit_card_title.gif";
+import cardDescription from "../../images/edit_card_description.gif";
 import createCard from "../../images/create_card.gif";
 import deleteCard from "../../images/delete_card.gif";
 import listTitle from "../../images/list_title.gif";
-import deleteList from "../../images/remove_column.gif";
+import deleteList from "../../images/delete_list.gif";
 
 export default class Tutorial extends React.Component {
   constructor(props) {
