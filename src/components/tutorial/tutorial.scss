@@ -4,7 +4,11 @@
   flex-direction: column;
   align-items: center;
   color: black;
-
+  a {
+    text-decoration: underline;
+    -webkit-text-decoration-color: red; /* Safari */
+    text-decoration-color: red;
+  }
   h1 {
     font-family: "Modak", cursive;
     font-size: 70px;

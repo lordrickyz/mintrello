@@ -10,6 +10,7 @@ import createCard from "../../images/create_card.gif";
 import deleteCard from "../../images/delete_card.gif";
 import listTitle from "../../images/list_title.gif";
 import deleteList from "../../images/remove_column.gif";
+import { Link } from "react-router-dom";
 
 export default class Tutorial extends React.Component {
   constructor(props) {
@@ -122,7 +123,9 @@ export default class Tutorial extends React.Component {
             </p>
           </div>
         </div>
-        <h1>Enjoy Mintrello!</h1>
+        <Link to="/dashboard">
+          <h1>Click here to Enjoy Mintrello!</h1>
+        </Link>
       </div>
     );
   }
