@@ -57,6 +57,7 @@
       }
       p {
         color: $secondary-peppermint-red;
+        
   
         text-align: center;
         font-size: 34px;
@@ -166,6 +167,7 @@
   }
   
   li {
+    
 
     display: flex;
     flex-direction: row;
@@ -193,9 +195,10 @@
       p {
         font-family: $secondary-font;
         color: black;
-        margin-left: 10px;
+        margin-left: 5px;
         font-size: 22px;
         width: 500px;
+        line-height: 25px;
       }
 
     }
