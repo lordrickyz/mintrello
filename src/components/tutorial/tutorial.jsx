@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../nav/navbar";
 import Footer from "../splash/footer";
-import "./tutorial.scss";
+// import "./tutorial.scss";
 import main from "../../images/main.png";
 import { Link } from "react-router-dom";
 import dragCard from "../../images/drag_card.gif";
