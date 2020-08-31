@@ -48,7 +48,9 @@ class CardShow extends React.Component {
       <div className="card-title-container">
         <span className="card-title-icon" id="card-show-icons">
           <FontAwesomeIcon icon={faPencilAlt} />
+          <h3>Title</h3>
         </span>
+        <br/>
         <textarea
           className="card-title-editor"
           spellCheck="false"
@@ -60,7 +62,6 @@ class CardShow extends React.Component {
           <FontAwesomeIcon icon={faTimes} />
         </span>
         <div className="card-show-listname">
-          <p>In Column</p>
         </div>
       </div>
     );
@@ -88,7 +89,7 @@ class CardShow extends React.Component {
       <div className="card-show">
         <div className="card-show-title"> {titleBlock} </div>
         <div className="card-show-desc"> {descriptionBlock} </div>
-        <button onClick={this.deleteCard}> Delete Card</button>
+        <button className='show-card-delete' onClick={this.deleteCard}> Delete Card</button>
       </div>
     );
   }
