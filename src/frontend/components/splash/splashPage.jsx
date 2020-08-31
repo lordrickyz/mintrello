@@ -29,7 +29,7 @@ class SplashPage extends React.Component {
               <li><button className='right-start-btn'>Get Started</button></li>
             </ul>
           </div>
-        s</div>
+        </div>
         <ul className='splash-page-body'>
           <li>
             <h1>Track
