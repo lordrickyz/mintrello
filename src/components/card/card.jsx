@@ -1,7 +1,7 @@
 import React from "react";
 import { Draggable } from "react-beautiful-dnd";
 import { connect } from "react-redux";
-import { openModal } from "../../actions/modal_actions";
+import { openModal } from "../modal/modal_actions";
 
 const mdtp = (dispatch) => {
   return {

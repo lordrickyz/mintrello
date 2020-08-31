@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { closeModal } from "../../actions/modal_actions";
+import { closeModal } from "./modal_actions";
 import CardShow from "../card/card_show";
 import "./modal.css";
 

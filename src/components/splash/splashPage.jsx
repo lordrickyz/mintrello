@@ -1,21 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Navbar from '../nav/navbar';
-import butler from "../../../images/Mintrello-Butler.gif";
-import splashImageOne from '../../../images/splashfiller1.png';
-import splashImageTwo from '../../../images/splashfiller2.png';
-import butlerPocket from '../../../images/buter-pocket.jpg';
+import butler from "../../images/Mintrello-Butler.gif";
+import splashImageOne from '../../images/splashfiller1.png';
+import splashImageTwo from '../../images/splashfiller2.png';
+import butlerPocket from '../../images/buter-pocket.jpg';
+// import { Link } from 'react-router-dom';
 
 class SplashPage extends React.Component {
-  // constructor(props) {
-  //   super(props)
-  // }
 
   render() {
-
-    const dummyText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus non enim praesent elementum. Nibh tortor id aliquet lectus proin. Dictum non consectetur a erat nam at lectus urna duis. Augue interdum velit euismod in pellentesque massa placerat duis. Viverra mauris in aliquam sem fringilla ut morbi tincidunt. Consectetur purus ut faucibus pulvinar elementum integer enim neque. In mollis nunc sed id.'
-
-
+    
     return (
       <div className='splash-page-container'>
         <header><Navbar/></header>
@@ -43,7 +37,6 @@ class SplashPage extends React.Component {
           <li>
           <h1>Complete
             <br />
-              {/* <p>{dummyText}</p> */}
               <p>Complete, delete, forget. 
                 Mintrello's emphasis on a minimalist structure ensures the only visible projects are the ones you still need to complete.
 

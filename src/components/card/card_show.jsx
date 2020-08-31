@@ -6,7 +6,7 @@ import {
   faPencilAlt,
   faAlignJustify,
 } from "@fortawesome/free-solid-svg-icons";
-import { closeModal } from "../../actions/modal_actions";
+import { closeModal } from "../modal/modal_actions";
 
 const mdtp = (dispatch) => {
   return {
