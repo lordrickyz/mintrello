@@ -14,18 +14,21 @@
   h1 {
     font-family: "Modak", cursive;
     font-size: 70px;
-    color: red;
+    // color: red;
+    color: $primary-peppermint-red;
   }
   h3 {
     font-family: "Modak", cursive;
     font-size: 48px;
-    color: red;
+    // color: red;
+    color: $primary-peppermint-red;
   }
   h1:last-child {
     margin-top: 50px;
   }
   p {
-    font-size: 18px;
+    font-size: 20px;
+    font-family: $secondary-font;
   }
   .tutorial-steps {
     margin-top: 50px;
@@ -35,6 +38,7 @@
       padding: 20px;
     }
     img {
+      @include standardRadius;
       width: 40%;
       height: 200px;
     }
