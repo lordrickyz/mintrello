@@ -11,11 +11,11 @@ const App = () => {
   return (
     <div>
       <Modal />
-      <Navbar />
+      {/* <Navbar /> */}
       <Switch>
         <Route exact path="/" component={SplashPage} />
         <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact patch="/tutorial" component={Tutorial} />
+        <Route exact path="/tutorial" component={Tutorial} />
       </Switch>
     </div>
   );

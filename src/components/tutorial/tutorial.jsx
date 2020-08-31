@@ -1,12 +1,15 @@
 import React from "react";
 import "./tutorial.scss";
-import main from "../../../images/main.png";
-import dragCard from "../../../images/drag_card.gif";
-import createList from "../../../images/create_list.gif";
-import dragList from "../../../images/drag_lists.gif";
-import editCard from "../../../images/editing_card.gif";
-import cardDescription from "../../../images/modify_card.gif";
-import createCard from "../../../images/create_card.gif";
+import main from "../../images/main.png";
+import dragCard from "../../images/drag_card.gif";
+import createList from "../../images/create_list.gif";
+import dragList from "../../images/drag_lists.gif";
+import editCard from "../../images/editing_card.gif";
+import cardDescription from "../../images/modify_card.gif";
+import createCard from "../../images/create_card.gif";
+import deleteCard from "../../images/delete_card.gif";
+import listTitle from "../../images/list_title.gif";
+import deleteList from "../../images/remove_column.gif";
 
 export default class Tutorial extends React.Component {
   constructor(props) {
@@ -90,7 +93,7 @@ export default class Tutorial extends React.Component {
           <img src={cardDescription} />
         </div>
         <div className="tutorial-steps">
-          <img src={main} />
+          <img src={listTitle} />
           <div className="inner-text">
             <h3>Updating a List's Title</h3>
             <p>
@@ -107,10 +110,10 @@ export default class Tutorial extends React.Component {
               the erase button
             </p>
           </div>
-          <img src={main} />
+          <img src={deleteCard} />
         </div>
         <div className="tutorial-steps">
-          <img src={main} />
+          <img src={deleteList} />
           <div className="inner-text">
             <h3>Erasing a List</h3>
             <p>
