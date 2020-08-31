@@ -2,10 +2,10 @@ import React from "react";
 import Navbar from "../nav/navbar";
 import butler from "../../images/Mintrello-Butler.gif";
 import splashImageOne from "../../images/drag_card.gif";
-import splashImageTwo from "../../images/editing_card.gif";
-import butlerPocket from '../../images/buter-pocket.jpg';
-import Footer from './footer'
-import { Link } from 'react-router-dom';
+import splashImageTwo from "../../images/edit_card_title.gif";
+import butlerPocket from "../../images/buter-pocket.jpg";
+import Footer from "./footer";
+import { Link } from "react-router-dom";
 
 class SplashPage extends React.Component {
   render() {
@@ -82,10 +82,9 @@ class SplashPage extends React.Component {
           </li>
         </ul>
 
-        <Footer/>
+        <Footer />
       </div>
     );
-
   }
 }
 
