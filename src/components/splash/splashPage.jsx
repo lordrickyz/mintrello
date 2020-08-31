@@ -1,5 +1,5 @@
-import React from 'react';
-import Navbar from '../nav/navbar';
+import React from "react";
+import Navbar from "../nav/navbar";
 import butler from "../../images/Mintrello-Butler.gif";
 import splashImageOne from '../../images/splashfiller1.png';
 import splashImageTwo from '../../images/splashfiller2.png';
@@ -8,9 +8,7 @@ import Footer from './footer'
 // import { Link } from 'react-router-dom';
 
 class SplashPage extends React.Component {
-
   render() {
-    
     return (
       <div className="splash-page-container">
         <header>
@@ -27,12 +25,14 @@ class SplashPage extends React.Component {
             <p>Keep project planning sweet and simple</p>
             <ul className="start-buttons-container">
               <li>
-                <button className="left-start-btn">Tutorial</button>
+                <Link to="/tutorial">
+                  <button className="left-start-btn">Tutorial</button>
+                </Link>
               </li>
               <li>
-                <a href="#/dashboard">
+                <Link to="/dashboard">
                   <button className="right-start-btn">Get Started</button>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -87,11 +87,6 @@ class SplashPage extends React.Component {
     );
 
   }
-
-
-  
-
-};
-
+}
 
 export default SplashPage;
