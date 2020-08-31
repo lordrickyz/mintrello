@@ -25,8 +25,8 @@ class SplashPage extends React.Component {
             <h1>Mintrello</h1>
             <p>Keep project planning sweet and simple</p>
             <ul className='start-buttons-container'>
-              <li><button>Recipe Tutorial</button></li>
-              <li><button>Get Started</button></li>
+              <li><button className='left-start-btn'>Recipe Tutorial</button></li>
+              <li><button className='right-start-btn'>Get Started</button></li>
             </ul>
           </div>
         s</div>
