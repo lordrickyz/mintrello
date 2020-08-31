@@ -5,7 +5,7 @@ import splashImageOne from '../../images/splashfiller1.png';
 import splashImageTwo from '../../images/splashfiller2.png';
 import butlerPocket from '../../images/buter-pocket.jpg';
 import Footer from './footer'
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class SplashPage extends React.Component {
   render() {
