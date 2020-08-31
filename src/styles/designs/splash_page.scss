@@ -80,25 +80,25 @@
   // // border: 2px solid silver;
   // border: 2px solid $primary-peppermint-red;
   // padding: 20px 15px 20px 15px;
-  width: 50%;
+  width: 63%;
   // margin-left: 16%;
   margin-top: 7%;
   // @include standardRadius;
 
   .left-start-btn {
-      // background-color: white;
   background-color: $secondary-peppermint-red;
   font-family: $secondary-font;
   color: whitesmoke;
-  // color: $primary-peppermint-red;
-  // font-family: $title-font;
   font-size: 25px;
   border: none;
+  border-right: 1px solid transparent;
+  // margin-right: 1px;
+  outline: none;
 
-
-  
   height: 70px;
   width: 200px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
   // border-width: 1px;
   // border-radius: 4px;
   // border-top-color: rgba(0, 0, 0, 0.1);
@@ -106,6 +106,7 @@
   // border-bottom-color: rgba(0, 0, 0, 0.25);
   // border-left-color: rgba(0, 0, 0, 0.1);
   padding-bottom: 1px;
+  box-shadow: 0 2px 0 0 rgba(55,59,63,0.5);
 
 
 
@@ -119,24 +120,33 @@
   // color: $primary-peppermint-red;
   // font-family: $title-font;
   font-size: 25px;
+  border-left: 1px solid transparent;
   border: none;
+  outline: none;
 
-
-  
   height: 70px;
   width: 200px;
   // border-width: 1px;
-  // border-radius: 4px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
   // border-top-color: rgba(0, 0, 0, 0.1);
   // border-right-color: rgba(0, 0, 0, 0.1);
   // border-bottom-color: rgba(0, 0, 0, 0.25);
   // border-left-color: rgba(0, 0, 0, 0.1);
   padding-bottom: 1px;
-
-
-
-
+  box-shadow: 0 2px 0 0 rgba(55,59,63,0.5);
   }
+
+  .left-start-btn:hover {
+    box-shadow: none;
+    margin-top: 1px;
+  }
+  
+  
+  .right-start-btn:hover {
+    box-shadow: none;
+    margin-top: 1px;
+    }
 
 }
 
