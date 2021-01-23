@@ -1,12 +1,14 @@
 import React from "react";
+import { connect } from "react-redux";
+import { updateCounter } from "../actions/counterActions";
+import { receiveTask } from "../actions/tasksActions";
+import { updateColumn } from "../actions/columnActions";
 
 class CardForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: `card-${this.props.cardLength}`,
-      title: "",
-      description: "",
+      content: "",
     };
 
     this.update = this.update.bind(this);
@@ -21,15 +23,19 @@ class CardForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.onSubmit((this.props.column),
-    { id: `card-${this.props.cardLength}`,
-      title: this.state.title,
+    const newTask = {
+      id: `task-${this.props.counter}`,
+      content: this.state.content,
       description: "",
+    };
+    this.props.receiveTask(newTask);
+    this.setState({
+      content: "",
     });
-
-    this.setState({ 
-      title: "",
-   });
+    this.props.updateCounter();
+    const newTaskIds = this.props.column.taskIds.concat(newTask.id);
+    const newColumn = { ...this.props.column, taskIds: newTaskIds };
+    this.props.updateColumn(newColumn);
   }
 
   render() {
@@ -55,5 +61,18 @@ class CardForm extends React.Component {
     );
   }
 }
+const mSTP = (state) => {
+  return {
+    counter: state.counter,
+  };
+};
 
-export default CardForm;
+const mDTP = (dispatch) => {
+  return {
+    updateCounter: () => dispatch(updateCounter()),
+    receiveTask: (card) => dispatch(receiveTask(card)),
+    updateColumn: (column) => dispatch(updateColumn(column)),
+  };
+};
+
+export default connect(mSTP, mDTP)(CardForm);
