@@ -16,7 +16,7 @@ export const deleteCard = (cardId) => {
   };
 };
 
-export const updateTak = (card) => {
+export const updateCard = (card) => {
   return {
     type: UPDATE_CARD,
     card,

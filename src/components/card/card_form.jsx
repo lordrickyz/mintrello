@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { updateCounter } from "../actions/counterActions";
-import { receiveTask } from "../actions/tasksActions";
+import { receiveCard } from "../actions/cardActions";
 import { updateColumn } from "../actions/columnActions";
 
 class CardForm extends React.Component {
@@ -23,18 +23,18 @@ class CardForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const newTask = {
-      id: `task-${this.props.counter}`,
+    const newCard = {
+      id: `card-${this.props.counter}`,
       content: this.state.content,
       description: "",
     };
-    this.props.receiveTask(newTask);
+    this.props.receiveCard(newCard);
     this.setState({
       content: "",
     });
     this.props.updateCounter();
-    const newTaskIds = this.props.column.taskIds.concat(newTask.id);
-    const newColumn = { ...this.props.column, taskIds: newTaskIds };
+    const newCardIds = this.props.column.cardIds.concat(newCard.id);
+    const newColumn = { ...this.props.column, cardIds: newCardIds };
     this.props.updateColumn(newColumn);
   }
 
@@ -70,7 +70,7 @@ const mSTP = (state) => {
 const mDTP = (dispatch) => {
   return {
     updateCounter: () => dispatch(updateCounter()),
-    receiveTask: (card) => dispatch(receiveTask(card)),
+    receiveCard: (card) => dispatch(receiveCard(card)),
     updateColumn: (column) => dispatch(updateColumn(column)),
   };
 };
