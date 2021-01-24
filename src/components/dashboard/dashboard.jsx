@@ -1,25 +1,11 @@
 import React from "react";
 import Column from "../column/column";
-import initialData from "../../database/initial_data";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { connect } from "react-redux";
 import ColumnForm from "../column/column_form";
 import Navbar from "../nav/navbar";
-// import { withRouter } from "react-router";
-
-
-const mstp = () => {
-  let data;
-  if (localStorage.getItem("state") != null) {
-    data = JSON.parse(localStorage.getItem("state"));
-  } else {
-    data = initialData;
-  }
-
-  return {
-    data: data,
-  };
-};
+import {receiveColumnOrder} from './../actions/columnOrderActions'
+import {updateColumn, updateColumns} from './../actions/columnActions'
 
 class DashBoard extends React.Component {
   constructor(props) {
@@ -266,4 +252,24 @@ class DashBoard extends React.Component {
   }
 }
 
-export default connect(mstp, null)(DashBoard);
+
+const mSTP = (state) => {
+  // localStorage.setItem("mintrello", JSON.stringify(state));
+  return {
+    columnOrder: state.columnOrder,
+    columns: state.columns,
+    counter: state.counter,
+  };
+};
+
+const mDTP = (dispatch) => {
+  return {
+    receiveColumnOrder: (columnOrder) =>
+    dispatch(receiveColumnOrder(columnOrder)),
+    updateColumn: (column) => dispatch(updateColumn(column)),
+    updateColumns: (columns) => dispatch(updateColumns(columns)),
+  };
+}
+
+
+export default connect(mSTP, mDTP)(DashBoard);
