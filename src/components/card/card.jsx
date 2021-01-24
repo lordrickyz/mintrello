@@ -1,11 +1,11 @@
 import React from "react";
 import { Draggable } from "react-beautiful-dnd";
 import { connect } from "react-redux";
-import { openModal } from "../modal/modal_actions";
+import { openModal } from "./../actions/modal_actions";
 
 const mdtp = (dispatch) => {
   return {
-    openShowModal: (item) => dispatch(openModal("show-card", item)),
+    openShowModal: (card) => dispatch(openModal("show-card", card)),
   };
 };
 
@@ -23,7 +23,7 @@ class Card extends React.Component {
           >
             <div
               onClick={() =>
-                this.props.openShowModal([this.props.card, this.props.editCard, this.props.removeCard, this.props.column ])
+                this.props.openShowModal(this.props.card)
               }
             >
               <span id={"card-item-title"}>{this.props.card.title}</span>

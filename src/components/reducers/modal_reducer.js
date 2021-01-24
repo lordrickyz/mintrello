@@ -1,7 +1,8 @@
-import { OPEN_MODAL, CLOSE_MODAL } from "../modal/modal_actions";
+import { OPEN_MODAL, CLOSE_MODAL } from "../actions/modal_actions";
 
 const modalReducer = (state = {}, action) => {
   Object.freeze(state);
+  debugger;
   switch (action.type) {
     case OPEN_MODAL:
       return action.modal;

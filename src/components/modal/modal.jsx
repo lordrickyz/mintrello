@@ -1,17 +1,18 @@
 import React from "react";
 import { connect } from "react-redux";
-import { closeModal } from "./modal_actions";
+import { closeModal } from './../actions/modal_actions'
 import CardShow from "../card/card_show";
 import "./modal.css";
 
-const Modal = ({ modal, closeModal }) => {
+const Modal = ({ modal, card }) => {
   if (!modal) {
     return null;
   }
   let component;
+  debugger;
   switch (modal.type) {
     case "show-card":
-      component = <CardShow card={modal.item[0]} editCard={modal.item[1]} removeCard={modal.item[2]} column={modal.item[3]} />;
+      component = <CardShow card={modal.card} />;
       break;
     default:
       return null;

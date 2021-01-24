@@ -6,17 +6,23 @@ import {
   faPencilAlt,
   faAlignJustify,
 } from "@fortawesome/free-solid-svg-icons";
-import { closeModal } from "../modal/modal_actions";
+import { closeModal } from "./../actions/modal_actions";
+import {updateCard, deleteCard } from './../actions/cardActions'
+import {updateColumn} from './../actions/columnActions'
 
 const mdtp = (dispatch) => {
   return {
     closeModal: () => dispatch(closeModal()),
+    editCard: (card) => dispatch(updateCard(card)),
+    removeCard: (cardId) => dispatch(deleteCard(cardId)),
+    updateColumn: (column) => dispatch(updateColumn(column))
   };
 };
 
 class CardShow extends React.Component {
   constructor(props) {
     super(props);
+    debugger;
     this.state = {
       id: this.props.card.id,
       title: this.props.card.title,
@@ -39,7 +45,11 @@ class CardShow extends React.Component {
   }
 
   deleteCard() {
-    this.props.removeCard(this.props.column, this.props.card)
+    const { column, card } = this.props;
+    const newCardIds = column.cardIds.filter((id) => card.id !== id);
+    const newColumn = { ...column, cardIds: newCardIds };
+    this.props.updateColumn(newColumn);
+    this.props.removeCard(this.props.card.id)
     this.props.closeModal();
   }
 
