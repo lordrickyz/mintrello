@@ -57,7 +57,7 @@ class ColumnForm extends React.Component {
             className="list-input-submit"
           />
         </form>
-        <button className="list-input-submit" onClick={this.handleReset}>
+        <button className="list-input-submit" onClick={this.handleReset} style={{width: "inherit", marginLeft: 0}}>
           Reset Board!
         </button>
       </div>

@@ -83,9 +83,9 @@ class Column extends React.Component {
                   {column.cardIds.map((cardId, index) => (
                     <Card
                       key={cardId}
-                      column={column}
+                      column={this.props.column}
                       index={index}
-                      card={this.props.cards[cardId]}
+                      card={cards[cardId]}
                       updateColumn={this.props.updateColumn}
                     />
                   ))}

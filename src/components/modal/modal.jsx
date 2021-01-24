@@ -5,14 +5,15 @@ import CardShow from "../card/card_show";
 import ResetBoard from "./resetBoard"
 import "./modal.css";
 
-const Modal = ({ modal, card }) => {
+const Modal = ({ modal }) => {
   if (!modal) {
     return null;
   }
   let component;
-  switch (modal.type) {
+  debugger
+  switch (modal.component) {
     case "show-card":
-      component = <CardShow card={modal.card} />;
+      component = <CardShow card={modal.card} column={modal.column} />;
       break;
     case "resetBoard":
       component = <ResetBoard />

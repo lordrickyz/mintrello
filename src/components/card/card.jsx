@@ -5,7 +5,7 @@ import { openModal } from "./../actions/modal_actions";
 
 const mdtp = (dispatch) => {
   return {
-    openShowModal: (card) => dispatch(openModal("show-card", card)),
+    openModal: (card, column) => dispatch(openModal("show-card", card, column)),
   };
 };
 
@@ -23,7 +23,7 @@ class Card extends React.Component {
           >
             <div
               onClick={() =>
-                this.props.openShowModal(this.props.card)
+                this.props.openModal(this.props.card, this.props.column)
               }
             >
               <span id={"card-item-title"}>{this.props.card.title}</span>
