@@ -21,7 +21,7 @@ const cardsReducer = (state = {}, action) => {
       }
       return newState;
     case UPDATE_CARD:
-      newState.cards[action.card.id] = action.card;
+      newState[action.card.id] = action.card;
       return newState;
     default:
       return state;

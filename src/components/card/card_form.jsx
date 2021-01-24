@@ -8,7 +8,7 @@ class CardForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      content: "",
+      title: "",
     };
 
     this.update = this.update.bind(this);
@@ -25,16 +25,18 @@ class CardForm extends React.Component {
     e.preventDefault();
     const newCard = {
       id: `card-${this.props.counter}`,
-      content: this.state.content,
+      title: this.state.title,
       description: "",
     };
     this.props.receiveCard(newCard);
     this.setState({
-      content: "",
+      title: "",
     });
+    debugger;
     this.props.updateCounter();
     const newCardIds = this.props.column.cardIds.concat(newCard.id);
     const newColumn = { ...this.props.column, cardIds: newCardIds };
+    debugger;
     this.props.updateColumn(newColumn);
   }
 

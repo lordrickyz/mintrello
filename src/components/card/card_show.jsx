@@ -39,9 +39,10 @@ class CardShow extends React.Component {
     };
   }
 
-  handleClick(event) {
-    this.props.closeModal();
+  handleClick(e) {
+    e.stopPropagation();
     this.props.editCard(this.state);
+    this.props.closeModal();
   }
 
   deleteCard() {

@@ -1,16 +1,19 @@
 import React from "react";
+import {connect} from 'react-redux';
+import {receiveColumn} from '../actions/columnActions';
+import {updateCounter} from '../actions/counterActions';
+import { openModal } from "../actions/modal_actions";
 
 class ColumnForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: `column-${this.props.columnLength}`,
       title: "",
-      cardIds: [],
     };
 
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
 
   update(field) {
@@ -21,13 +24,18 @@ class ColumnForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.onSubmit({
-      id: `column-${this.props.columnLength}`,
+    this.props.receiveColumn({
+      id: `column-${this.props.counter}`,
       title: this.state.title,
       cardIds: [],
     });
-
+    this.props.updateCounter();
     this.setState({ title: "" });
+  }
+
+  handleReset(e){
+    e.preventDefault();
+    this.props.openModal("resetBoard")
   }
 
   render() {
@@ -49,9 +57,25 @@ class ColumnForm extends React.Component {
             className="list-input-submit"
           />
         </form>
+        <button className="list-input-submit" onClick={this.handleReset}>
+          Reset Board!
+        </button>
       </div>
     );
   }
 }
 
-export default ColumnForm;
+const mSTP = (state) => {
+  return {
+    counter: state.counter,
+  };
+};
+const mDTP = (dispatch) => {
+  return {
+    receiveColumn: (column) => dispatch(receiveColumn(column)),
+    updateCounter: () => dispatch(updateCounter()),
+    openModal: () => dispatch(openModal())
+  };
+};
+
+export default connect (mSTP, mDTP)(ColumnForm);

@@ -9,10 +9,12 @@ const Modal = ({ modal, card }) => {
     return null;
   }
   let component;
-  debugger;
   switch (modal.type) {
     case "show-card":
       component = <CardShow card={modal.card} />;
+      break;
+    case "":
+      component = <ResetBoard />
       break;
     default:
       return null;

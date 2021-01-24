@@ -10,108 +10,108 @@ import {updateColumn, updateColumns} from './../actions/columnActions'
 class DashBoard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.data;
-    localStorage.setItem("state", JSON.stringify(this.state));
+    // this.state = this.props.data;
+    // localStorage.setItem("state", JSON.stringify(this.state));
   }
   // JSON.parse(localStorage.getItem('state'))
 
   // Adding Columns
-  addColumn = (column) => {
-    const newState = {
-      ...this.state,
-      columns: {
-        ...this.state.columns,
-        [column.id]: column,
-      },
-      columnOrder: this.state.columnOrder.concat(column.id),
-    };
-    this.setState(newState);
-    localStorage.setItem("state", JSON.stringify(newState));
-  };
+  // addColumn = (column) => {
+  //   const newState = {
+  //     ...this.state,
+  //     columns: {
+  //       ...this.state.columns,
+  //       [column.id]: column,
+  //     },
+  //     columnOrder: this.state.columnOrder.concat(column.id),
+  //   };
+  //   this.setState(newState);
+  //   localStorage.setItem("state", JSON.stringify(newState));
+  // };
 
-  editColumn = (column) => {
-    const newState = {
-      ...this.state,
-      columns: {
-        ...this.state.columns,
-        [column.id]: column,
-      },
-    }
+  // editColumn = (column) => {
+  //   const newState = {
+  //     ...this.state,
+  //     columns: {
+  //       ...this.state.columns,
+  //       [column.id]: column,
+  //     },
+  //   }
 
-    this.setState(newState);
-    localStorage.setItem("state", JSON.stringify(newState));
-  }
+  //   this.setState(newState);
+  //   localStorage.setItem("state", JSON.stringify(newState));
+  // }
 
-  removeColumn = (column) => {
-    const newOrder = this.state.columnOrder.filter(item => item !== column.id)
-    let newColumns = Object.assign({}, this.state.columns);
-    delete newColumns[column]
+  // removeColumn = (column) => {
+  //   const newOrder = this.state.columnOrder.filter(item => item !== column.id)
+  //   let newColumns = Object.assign({}, this.state.columns);
+  //   delete newColumns[column]
 
-    const newState = {
-      ...this.state,
-      columns: newColumns,
-      columnOrder: newOrder,
-    };
-    this.setState(newState);
-    localStorage.setItem("state", JSON.stringify(newState));
-  }
+  //   const newState = {
+  //     ...this.state,
+  //     columns: newColumns,
+  //     columnOrder: newOrder,
+  //   };
+  //   this.setState(newState);
+  //   localStorage.setItem("state", JSON.stringify(newState));
+  // }
 
-  // Adding Cards
-  addCard = (column, card) => {
-    const newState = {
-      ...this.state,
-      cards: {
-        ...this.state.cards,
-        [card.id]: card,
-      },
-      columns: {
-        ...this.state.columns,
-        [column.id]: {
-          ...column,
-          cardIds: this.state.columns[column.id].cardIds.concat(card.id),
-        },
-      },
-    };
+  // // Adding Cards
+  // addCard = (column, card) => {
+  //   const newState = {
+  //     ...this.state,
+  //     cards: {
+  //       ...this.state.cards,
+  //       [card.id]: card,
+  //     },
+  //     columns: {
+  //       ...this.state.columns,
+  //       [column.id]: {
+  //         ...column,
+  //         cardIds: this.state.columns[column.id].cardIds.concat(card.id),
+  //       },
+  //     },
+  //   };
 
-    this.setState(newState);
-    localStorage.setItem("state", JSON.stringify(newState));
-  };
+  //   this.setState(newState);
+  //   localStorage.setItem("state", JSON.stringify(newState));
+  // };
 
-  editCard = (card) => {
-    const newState = {
-      ...this.state,
-      cards: {
-        ...this.state.cards,
-        [card.id]: card,
-      },
-    }
+  // editCard = (card) => {
+  //   const newState = {
+  //     ...this.state,
+  //     cards: {
+  //       ...this.state.cards,
+  //       [card.id]: card,
+  //     },
+  //   }
 
-    this.setState(newState);
-    localStorage.setItem("state", JSON.stringify(newState));
-  }
+  //   this.setState(newState);
+  //   localStorage.setItem("state", JSON.stringify(newState));
+  // }
 
-  removeCard = (column, card) => {
-    let cardId = card.id, columnId = column.id;
+  // removeCard = (column, card) => {
+  //   let cardId = card.id, columnId = column.id;
 
-    let newCards = Object.assign({}, this.state.cards);
-    delete newCards[card]
+  //   let newCards = Object.assign({}, this.state.cards);
+  //   delete newCards[card]
 
-    const newCardIds = this.state.columns[columnId].cardIds.filter(item => item !== cardId)
+  //   const newCardIds = this.state.columns[columnId].cardIds.filter(item => item !== cardId)
 
-    const newState = {
-      ...this.state,
-      cards: newCards,
-      columns: {
-        ...this.state.columns,
-        [columnId]: {
-          ...column,
-          cardIds: newCardIds,
-        }
-      },
-    };
-    this.setState(newState);
-    localStorage.setItem("state", JSON.stringify(newState));
-  }
+  //   const newState = {
+  //     ...this.state,
+  //     cards: newCards,
+  //     columns: {
+  //       ...this.state.columns,
+  //       [columnId]: {
+  //         ...column,
+  //         cardIds: newCardIds,
+  //       }
+  //     },
+  //   };
+  //   this.setState(newState);
+  //   localStorage.setItem("state", JSON.stringify(newState));
+  // }
 
   // Drag and Drop Function
   onDragEnd = (result) => {
@@ -129,21 +129,21 @@ class DashBoard extends React.Component {
     }
 
     if (type === "column") {
-      const newColumnOrder = Array.from(this.state.columnOrder);
+      const newColumnOrder = Array.from(this.props.columnOrder);
       newColumnOrder.splice(source.index, 1);
       newColumnOrder.splice(destination.index, 0, draggableId);
-
-      const newState = {
-        ...this.state,
-        columnOrder: newColumnOrder,
-      };
-      this.setState(newState);
-      localStorage.setItem("state", JSON.stringify(newState));
+      this.props.receiveColumnOrder(newColumnOrder);
+      // const newState = {
+      //   ...this.state,
+      //   columnOrder: newColumnOrder,
+      // };
+      // this.setState(newState);
+      // localStorage.setItem("state", JSON.stringify(newState));
       return;
     }
 
-    const start = this.state.columns[source.droppableId];
-    const finish = this.state.columns[destination.droppableId];
+    const start = this.props.columns[source.droppableId];
+    const finish = this.props.columns[destination.droppableId];
 
     if (start === finish) {
       const newCardIds = Array.from(start.cardIds);
@@ -154,17 +154,17 @@ class DashBoard extends React.Component {
         ...start,
         cardIds: newCardIds,
       };
+      this.props.updateColumn(newColumn)
+      // const newState = {
+      //   ...this.state,
+      //   columns: {
+      //     ...this.state.columns,
+      //     [newColumn.id]: newColumn,
+      //   },
+      // };
 
-      const newState = {
-        ...this.state,
-        columns: {
-          ...this.state.columns,
-          [newColumn.id]: newColumn,
-        },
-      };
-
-      this.setState(newState);
-      localStorage.setItem("state", JSON.stringify(newState));
+      // this.setState(newState);
+      // localStorage.setItem("state", JSON.stringify(newState));
       return;
     }
 
@@ -182,18 +182,18 @@ class DashBoard extends React.Component {
       ...finish,
       cardIds: finishCardIds,
     };
+    this.props.updateColumns([newStart, newFinish])
+    // const newState = {
+    //   ...this.state,
+    //   columns: {
+    //     ...this.state.columns,
+    //     [newStart.id]: newStart,
+    //     [newFinish.id]: newFinish,
+    //   },
+    // };
 
-    const newState = {
-      ...this.state,
-      columns: {
-        ...this.state.columns,
-        [newStart.id]: newStart,
-        [newFinish.id]: newFinish,
-      },
-    };
-
-    this.setState(newState);
-    localStorage.setItem("state", JSON.stringify(newState));
+    // this.setState(newState);
+    // localStorage.setItem("state", JSON.stringify(newState));
   };
 
 
@@ -213,35 +213,24 @@ class DashBoard extends React.Component {
                 {...provided.droppableProps}
                 ref={provided.innerRef}
               >
-                {this.state.columnOrder.map((columnId, index) => {
-                  const column = this.state.columns[columnId];
-                  const cards = column.cardIds.map(
-                    (cardId) => this.state.cards[cardId]
-                  );
+                {this.props.columnOrder.map((columnId, index) => {
+                  // const column = this.state.columns[columnId];
+                  // const cards = column.cardIds.map(
+                  //   (cardId) => this.state.cards[cardId]
+                  // );
 
                   return (
                     <Column
-                      key={column.id}
-                      column={column}
-                      columnOrder={this.state.columnOrder}
-                      cards={cards}
-                      totalCards={this.state.cards}
+                      key={columnId}
+                      column={this.props.columns[columnId]}
                       index={index}
-                      addCard={this.addCard}
-                      editCard={this.editCard}
-                      removeCard={this.removeCard}
-                      editColumn={this.editColumn}
-                      removeColumn={this.removeColumn}
                     />
                   );
                 })}
                 {provided.placeholder}
 
                 <ColumnForm
-                  onSubmit={this.addColumn}
-                  columns={this.state.columns}
-                  columnLength={this.state.columnOrder.length + 1}
-                  columnOrder={this.state.columnOrder}
+                  counter={this.props.counter}
                 />
               </div>
             )}
@@ -254,7 +243,7 @@ class DashBoard extends React.Component {
 
 
 const mSTP = (state) => {
-  // localStorage.setItem("mintrello", JSON.stringify(state));
+  localStorage.setItem("mintrello", JSON.stringify(state));
   return {
     columnOrder: state.columnOrder,
     columns: state.columns,
