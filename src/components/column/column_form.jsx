@@ -74,7 +74,7 @@ const mDTP = (dispatch) => {
   return {
     receiveColumn: (column) => dispatch(receiveColumn(column)),
     updateCounter: () => dispatch(updateCounter()),
-    openModal: () => dispatch(openModal())
+    openModal: (type) => dispatch(openModal(type))
   };
 };
 

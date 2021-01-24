@@ -1,4 +1,7 @@
 import React from "react"
+import {closeModal} from "./../actions/modal_actions"
+import {connect} from 'react-redux'
+import {resetData} from './../actions/resetActions'
 
 class ResetBoard extends React.Component {
   constructor(props){
@@ -8,9 +11,13 @@ class ResetBoard extends React.Component {
 
   }
   handleClick(e){
+
     e.preventDefault();
+    this.props.closeModal()
+    this.props.resetData()
 
   }
+
   render(){
     return(
       <button onClick={this.handleClick}>
@@ -21,5 +28,10 @@ class ResetBoard extends React.Component {
     
   }
 }
+const mDTP = dispatch => ({
+    closeModal: () => dispatch(closeModal()),
+    resetData: () => dispatch(resetData()),
+  })
 
-import default ResetBoard;
+
+export default connect(null, mDTP)(ResetBoard);

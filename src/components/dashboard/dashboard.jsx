@@ -6,6 +6,7 @@ import ColumnForm from "../column/column_form";
 import Navbar from "../nav/navbar";
 import {receiveColumnOrder} from './../actions/columnOrderActions'
 import {updateColumn, updateColumns} from './../actions/columnActions'
+import initalData from './../../initial_data'
 
 class DashBoard extends React.Component {
   constructor(props) {
@@ -243,6 +244,12 @@ class DashBoard extends React.Component {
 
 
 const mSTP = (state) => {
+  debugger
+  if(state.reset){
+    state = initalData
+    localStorage.removeItem("mintrello");
+    window.location.reload();
+  }
   localStorage.setItem("mintrello", JSON.stringify(state));
   return {
     columnOrder: state.columnOrder,

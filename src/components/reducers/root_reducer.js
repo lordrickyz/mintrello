@@ -4,6 +4,7 @@ import cardsReducer from "./cardReducer";
 import columnsReducer from "./columnsReducer";
 import columnOrderReducer from "./columnOrderReducer";
 import counterReducer from "./counterReducer";
+import resetDataReducer from "./resetDataReducer";
 
 const rootReducer = combineReducers({
   cards: cardsReducer,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   columns: columnsReducer,
   columnOrder: columnOrderReducer,
   counter: counterReducer,
+  reset: resetDataReducer,
 });
 
 export default rootReducer;

@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { closeModal } from './../actions/modal_actions'
 import CardShow from "../card/card_show";
+import ResetBoard from "./resetBoard"
 import "./modal.css";
 
 const Modal = ({ modal, card }) => {
@@ -13,7 +14,7 @@ const Modal = ({ modal, card }) => {
     case "show-card":
       component = <CardShow card={modal.card} />;
       break;
-    case "":
+    case "resetBoard":
       component = <ResetBoard />
       break;
     default:

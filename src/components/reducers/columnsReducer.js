@@ -1,5 +1,4 @@
 import {
-  RECEIVE_COLUMNS,
   RECEIVE_COLUMN,
   DELETE_COLUMN,
   UPDATE_COLUMN,
@@ -11,8 +10,6 @@ const columnsReducer = (state = {}, action) => {
   const newState = Object.assign({}, state);
 
   switch (action.type) {
-    // case RECEIVE_COLUMNS:
-    //   return action.columns;
     case UPDATE_COLUMN:
       newState[action.column.id] = action.column;
       return newState;
