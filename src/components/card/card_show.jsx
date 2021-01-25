@@ -65,7 +65,6 @@ class CardShow extends React.Component {
           className="card-title-editor"
           spellCheck="false"
           defaultValue={this.state.title}
-          // value={this.state.title}
           onChange={this.update("title")}
         />
         <span className="card-show-close" onClick={this.handleClick}>

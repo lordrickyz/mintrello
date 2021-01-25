@@ -38,17 +38,6 @@ class Column extends React.Component {
     }
   };
 
-
-  // update(field) {
-  //   return (e) => {
-  //     this.setState({ [field]: e.target.value });
-  //   };
-  // }
-
-  // handleClick(e) {
-  //   this.props.editColumn(this.state);
-  // }
-
   deleteColumn() {
     this.props.removeColumn(this.props.column)
   }
