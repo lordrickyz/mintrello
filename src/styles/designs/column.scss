@@ -23,7 +23,6 @@
     font-size: 30px;
     margin-top: 2px;
   }
-  
 }
 
 // where the cards exists.
@@ -40,11 +39,10 @@
 }
 
 .column-card-container::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .list-form-container {
-
   width: 230px;
   margin: 8px;
   height: 100%;
@@ -52,8 +50,7 @@
   // display: inline-block;
   // vertical-align: top;
   // white-space: nowrap;
-  
- 
+
   height: 100%;
   box-sizing: border-box;
   display: inline-block;
@@ -83,8 +80,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  
 }
 
 .list-input-title {
@@ -138,7 +133,7 @@
   padding-bottom: 4px;
   cursor: pointer;
   line-height: 20px;
-  width: 80px;
+  width: 90px;
   font-size: 15px;
   text-emphasis: bold;
 }
@@ -188,8 +183,4 @@
   padding: 4px;
   background-color: rgb(53, 50, 50);
   color: whitesmoke;
-
-
 }
-
-

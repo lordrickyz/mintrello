@@ -17,8 +17,6 @@ class Column extends React.Component {
     };
 
     this.container = React.createRef();
-    // this.update = this.update.bind(this);
-    // this.handleClick = this.handleClick.bind(this);
     this.deleteColumn = this.deleteColumn.bind(this);
   }
 
@@ -57,6 +55,7 @@ class Column extends React.Component {
 
   render() {
     const {column, index, cards} = this.props
+    debugger
     return (
       <Draggable draggableId={column.id} index={index}>
         {(provided) => (
@@ -72,14 +71,15 @@ class Column extends React.Component {
                 defaultValue={column.title}
               ></textarea>
             </div>
-
-            <Droppable droppableId={column.id}>
+            <Droppable droppableId={column.id} type="card">
               {(provided, snapshot) => (
-                <div
+                <div 
                   className="column-card-container"
                   ref={provided.innerRef}
+                  style={{ backgroundColor: snapshot.isDraggingOver ? '#ff7f7f' : 'inherit' }}
                   {...provided.droppableProps}
                 >
+                  
                   {column.cardIds.map((cardId, index) => (
                     <Card
                       key={cardId}

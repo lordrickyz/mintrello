@@ -22,7 +22,6 @@ const mdtp = (dispatch) => {
 class CardShow extends React.Component {
   constructor(props) {
     super(props);
-    debugger;
     this.state = {
       id: this.props.card.id,
       title: this.props.card.title,
@@ -47,7 +46,6 @@ class CardShow extends React.Component {
 
   deleteCard() {
     const { column, card } = this.props;
-    debugger;
     const newCardIds = column.cardIds.filter((id) => card.id !== id);
     const newColumn = { ...column, cardIds: newCardIds };
     this.props.updateColumn(newColumn);

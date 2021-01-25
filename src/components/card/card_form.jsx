@@ -32,11 +32,9 @@ class CardForm extends React.Component {
     this.setState({
       title: "",
     });
-    debugger;
     this.props.updateCounter();
     const newCardIds = this.props.column.cardIds.concat(newCard.id);
     const newColumn = { ...this.props.column, cardIds: newCardIds };
-    debugger;
     this.props.updateColumn(newColumn);
   }
 

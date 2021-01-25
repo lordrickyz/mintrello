@@ -244,7 +244,6 @@ class DashBoard extends React.Component {
 
 
 const mSTP = (state) => {
-  debugger
   if(state.reset){
     state = initalData
     localStorage.removeItem("mintrello");

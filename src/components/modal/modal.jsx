@@ -10,7 +10,6 @@ const Modal = ({ modal }) => {
     return null;
   }
   let component;
-  debugger
   switch (modal.component) {
     case "show-card":
       component = <CardShow card={modal.card} column={modal.column} />;
