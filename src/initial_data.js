@@ -2,23 +2,23 @@ const initialData = {
   cards: {
     "card-1": {
       id: "card-1",
-      title: "Trashing",
-      description: "Take out the garbage",
+      title: "Wireframe Design",
+      description: "Redesign all wireframe for my new application",
     },
     "card-2": {
       id: "card-2",
-      title: "Watching",
-      description: "Watch my favorite show",
+      title: "API Design",
+      description: "Make a decision between Rails and Mongo",
     },
     "card-3": {
       id: "card-3",
-      title: "Charging",
-      description: "Charge my phone",
+      title: "hardware restrictions ",
+      description: "Research mobile devices for hardware restrictions",
     },
     "card-4": {
       id: "card-4",
-      title: "Cooking",
-      description: "Cook Dinner",
+      title: "API vs Serverless",
+      description: "Choose between API and a serverless option",
     },
   },
   columns: {
@@ -40,6 +40,7 @@ const initialData = {
   },
   // Facilitate reordering of the columns
   columnOrder: ["column-1", "column-2", "column-3"],
+  counter: 100,
 };
 
-export default initialData
+export default initialData;

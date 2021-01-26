@@ -1,15 +1,15 @@
 export const OPEN_MODAL = "OPEN_MODAL";
 export const CLOSE_MODAL = "CLOSE_MODAL";
 
-export const openModal = (type, item) => ({
+export const openModal = (component, card, column) => ({
   type: OPEN_MODAL,
   modal: {
-    type,
-    item,
+    component,
+    card,
+    column,
   },
 });
 
 export const closeModal = () => ({
   type: CLOSE_MODAL,
 });
-

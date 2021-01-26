@@ -1,7 +1,11 @@
 import React from "react";
 import Card from "../card/card";
 import { Droppable, Draggable } from 'react-beautiful-dnd';
-import CardForm from "../card/card_form"
+import CardForm from "../card/card_form";
+import {connect} from 'react-redux';
+import {deleteColumn, updateColumn} from './../actions/columnActions';
+
+
 
 class Column extends React.Component {
   constructor(props) {
@@ -11,28 +15,38 @@ class Column extends React.Component {
       title: this.props.column.title,
       cardIds: this.props.column.cardIds,
     };
-    this.update = this.update.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+
+    this.container = React.createRef();
     this.deleteColumn = this.deleteColumn.bind(this);
   }
 
-  update(field) {
-    return (e) => {
-      this.setState({ [field]: e.target.value });
-    };
+  componentDidMount() {
+    document.addEventListener("mousedown", this.handleClickOutside);
   }
 
-  handleClick(e) {
-    this.props.editColumn(this.state);
+  componentWillUnmount() {
+    document.removeEventListener("mousedown", this.handleClickOutside);
   }
+
+  handleClickOutside = (e) => {
+    if (this.container.current.value !== this.props.column.title) {
+      const newColumn = {
+        ...this.props.column,
+        title: this.container.current.value,
+      };
+      this.props.updateColumn(newColumn);
+    }
+  };
 
   deleteColumn() {
     this.props.removeColumn(this.props.column)
   }
 
   render() {
+    const {column, index, cards} = this.props
+    debugger
     return (
-      <Draggable draggableId={this.props.column.id} index={this.props.index}>
+      <Draggable draggableId={column.id} index={index}>
         {(provided) => (
           <div
             className="column-container"
@@ -42,36 +56,32 @@ class Column extends React.Component {
             <div className="column-item-header" {...provided.dragHandleProps}>
               <textarea
                 className="list-name-editor"
-                onBlur={this.handleClick}
-                onChange={this.update("title")}
-                defaultValue={this.props.column.title}
+                ref={this.container}
+                defaultValue={column.title}
               ></textarea>
             </div>
-
-            <Droppable droppableId={this.props.column.id}>
+            <Droppable droppableId={column.id} type="card">
               {(provided, snapshot) => (
-                <div
+                <div 
                   className="column-card-container"
                   ref={provided.innerRef}
+                  style={{ backgroundColor: snapshot.isDraggingOver ? '#ff7f7f' : 'inherit' }}
                   {...provided.droppableProps}
                 >
-                  {this.props.cards.map((card, index) => (
+                  
+                  {column.cardIds.map((cardId, index) => (
                     <Card
-                      key={card.id}
-                      card={card}
+                      key={cardId}
                       column={this.props.column}
                       index={index}
-                      editCard={this.props.editCard}
-                      removeCard={this.props.removeCard}
+                      card={cards[cardId]}
+                      updateColumn={this.props.updateColumn}
                     />
                   ))}
                   {provided.placeholder}
 
                   <CardForm
                     column={this.props.column}
-                    onSubmit={this.props.addCard}
-                    cards={this.props.cards}
-                    cardLength={Object.keys(this.props.totalCards).length + 1}
                   />
                   <button className= 'remove-clmn-btn' onClick={this.deleteColumn}>
                     Remove Column
@@ -86,4 +96,16 @@ class Column extends React.Component {
   }
 }
 
-export default Column;
+const mSTP = (state) => {
+  return {
+    cards: state.cards,
+  };
+};
+const mDTP = (dispatch) => {
+  return {
+    removeColumn: (columnId) => dispatch(deleteColumn(columnId)),
+    updateColumn: (column) => dispatch(updateColumn(column)),
+  };
+};
+
+export default connect(mSTP, mDTP)(Column);

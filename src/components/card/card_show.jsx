@@ -6,11 +6,16 @@ import {
   faPencilAlt,
   faAlignJustify,
 } from "@fortawesome/free-solid-svg-icons";
-import { closeModal } from "../modal/modal_actions";
+import { closeModal } from "./../actions/modal_actions";
+import {updateCard, deleteCard } from './../actions/cardActions'
+import {updateColumn} from './../actions/columnActions'
 
 const mdtp = (dispatch) => {
   return {
     closeModal: () => dispatch(closeModal()),
+    editCard: (card) => dispatch(updateCard(card)),
+    removeCard: (cardId) => dispatch(deleteCard(cardId)),
+    updateColumn: (column) => dispatch(updateColumn(column))
   };
 };
 
@@ -33,13 +38,18 @@ class CardShow extends React.Component {
     };
   }
 
-  handleClick(event) {
-    this.props.closeModal();
+  handleClick(e) {
+    e.stopPropagation();
     this.props.editCard(this.state);
+    this.props.closeModal();
   }
 
   deleteCard() {
-    this.props.removeCard(this.props.column, this.props.card)
+    const { column, card } = this.props;
+    const newCardIds = column.cardIds.filter((id) => card.id !== id);
+    const newColumn = { ...column, cardIds: newCardIds };
+    this.props.updateColumn(newColumn);
+    this.props.removeCard(this.props.card.id)
     this.props.closeModal();
   }
 
@@ -55,7 +65,6 @@ class CardShow extends React.Component {
           className="card-title-editor"
           spellCheck="false"
           defaultValue={this.state.title}
-          // value={this.state.title}
           onChange={this.update("title")}
         />
         <span className="card-show-close" onClick={this.handleClick}>
