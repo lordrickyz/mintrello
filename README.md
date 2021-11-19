@@ -9,7 +9,7 @@ Mintrello is a serverless drag and drop project board. Where user's can break up
 
 ### Technologies & Libraries
 - React + Redux
-- JavaScript
+- JavaScript / NodeJS
 - React Beautiful DnD
 
 ![img](https://i.ibb.co/Gcpq1gy/Screen-Shot-2021-11-19-at-5-31-06-PM.png)
@@ -62,6 +62,20 @@ onDragEnd = (result) => {
       this.props.updateColumn(newColumn)
       return;
     }
- ```
+```
  
- ![img](https://i.ibb.co/bX3vkB3/Screen-Shot-2021-11-19-at-5-31-53-PM.png)
+![img](https://i.ibb.co/bX3vkB3/Screen-Shot-2021-11-19-at-5-31-53-PM.png)
+ 
+### Installation
+If you'd like to play around with the code yourself, just clone/fork the repo.
+
+Install the required packages
+```
+npm install
+```
+
+Start the server
+```
+npm run start
+```
+ 
