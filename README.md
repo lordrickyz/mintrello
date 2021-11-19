@@ -7,9 +7,10 @@
 
 Mintrello is a serverless drag and drop project board. Where user's can break up projects in to smaller pieces by creating cards and organize them into certain orders. This is a runner up project for Mintbean's hackathon.
 
-### Technologies
-- React
+### Technologies & Libraries
+- React + Redux
 - JavaScript
+- React Beautiful DnD
 
 ![img](https://i.ibb.co/Gcpq1gy/Screen-Shot-2021-11-19-at-5-31-06-PM.png)
 
